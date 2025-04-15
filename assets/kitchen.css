@@ -2,24 +2,31 @@
 	border:1px solid black;	
 	height:100px;
 	display:flex;
+	width:100%;
 	flex-direction:column;
+	
 }
 
+.kitchen__table{
+	box-shadow:10px 10px 5px black;
+	z-index:2;
+}
 
 .kitchen__table .table__top{
 	background-color:#AAA;
 	height:70px;
 }
 .kitchen__table .table__bottom{
+	z-index:1;
 	background-color:#888;
 	height:40px;
+	box-shadow:5px 8px 1px #000;
 }
 
-
-
 .kitchen__under-table{
+	z-index:0;
 	width:100%;
-	border:1px solid black;
+	background-color:#666;
 	display:flex;
 	justify-content:center;
 }
@@ -38,24 +45,41 @@
 	justify-content:space-evenly;
 }
 
+
+.plate__container{
+	background-color:#FFF;
+	
+}
+
+
+.plate__content{
+	display:flex;
+	width:100%;
+}
+
+.plate__content::first-child{
+	border:2px solid red;
+}
+.plate__item{
+	width:45px;
+	height:45px;	
+	margin:10px;
+}
 .row__slot{
 	padding:25px;
 	margin: 5px;
 	cursor:pointer;
-	background-color:#
 }
 
-.row__slot#meat{
+#meat{
 	background-color:#763234;
 	color:#FFF;
 }
-
-.row__slot#rice{
+#rice{
 	background-color:#D4D4A4;
 	color:#000;
 }
-
-.row__slot#oil{
+#oil{
 	background-color:#A4A153;
 	color:#FFF;
 }

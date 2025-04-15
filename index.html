@@ -2,8 +2,9 @@
 <html>
 	<head>
 		<title>Project_Cook</title>
-		<link rel='stylesheet' href='assets/kitchen.css'>
 		<link rel='stylesheet' href='assets/game.css'>
+		<link rel='stylesheet' href='assets/kitchen.css'>
+		
 	</head>
 	<body>
 		<div class='game__container'>
@@ -17,7 +18,15 @@
 				<section class='kitchen__container'>
 					<div class='kitchen__content'>
 						<div class='kitchen__table'>
-							<div class='table__top'>T</div>
+							<div class='table__top'>
+								<div class='plate__container'>
+									<div class='plate__content'>
+										<div class='plate__item' id='meat'>Meat</div>
+										<div class='plate__item' id='rice'>Rice</div>
+										<div class='plate__item' id='oil'>Oil</div>
+									</div>
+								</div>
+							</div>
 							<div class='table__bottom'>B</div>
 						</div>
 						<div class='kitchen__under-table'>
@@ -38,5 +47,7 @@
 				</section>
 			</div>	
 		</div>
+
+		<script src='./objects/meat.js'></script>
 	</body>
 </html>
