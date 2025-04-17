@@ -1,9 +1,12 @@
-const plateList = document.getElementsByClassName('plate__item');
-const plateListSize = plateList.length;
+const meat = document.getElementById('meat');
+const grill = document.getElementById('grelha')
 
-for(let index=0;index<plateListSize;index++){
-	let plateItem=plateList[index];
-	plateItem.addEventListener('click',function(){
-		alert(this.id);
-	});
-}
+meat.addEventListener('click',function(){
+	let meatItem=document.createElement('span');
+	meatItem.id='meat';
+	meatItem.innerText='Meat';
+	console.log(meatItem);
+	console.log(grill)
+	grill.appendChild(meatItem);
+	grill.style='background-image:url("../img/grelha_on.png")';
+})

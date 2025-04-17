@@ -1,0 +1,148 @@
+.kitchen__container{
+	height:100px;
+	display:flex;
+	width:100%;
+	flex-direction:column;
+	
+
+	& .kitchen__content{
+		width:100%;
+	}	
+
+	& .kitchen__table{
+		& .table__top{
+			background-color:#AAA;
+			height:90px;
+			width:100%;
+			float:right;
+			padding-bottom:10px;
+			display:flex;
+			flex-direction:row-reverse;
+
+			& .plate__container{
+				width:50%;
+				height:80%;
+				margin:5px;
+				transform:translate(-8%);
+				
+				& .plate__content{
+					background-color:#556642;
+					height:60%;
+					width:100%;
+					display:flex;
+					padding:5px;
+					border-radius:10px;
+					justify-content:space-around;
+					
+					&:first-child{
+				
+					}
+
+					& .plate__item{	
+						width:51px;
+						height:36px;
+						background-color:#FFF;
+						border-radius:50%;
+						box-shadow:2px 5px 6px #373737;
+						display:flex;
+						justify-content:center;
+						align-items:center;
+						& span{
+							border-radius:50%;
+							width:60%;
+							text-align:center;
+						}
+					}
+				}
+			}
+
+			& .grill__container{
+				width:50%;
+
+				& .grill__content{
+					background-image:url("../img/grelha_off.png");
+					background-size:cover;
+					border-radius:5px 5px 0px 0px;
+					height:80%;
+					width:80%;
+					transform:translate(8%,5%);
+					padding-top:2px;
+					
+					& .grill__top{
+						//border:3px solid #222;
+						margin:5px;
+						height:50%;
+						border-radius:5px;
+						display:flex;
+						justify-content:center;
+						
+					}
+					
+					& .grill__bottom{
+						width:100%;
+						height:10px;
+						//background-color:#555;
+					}
+				}
+			}
+		}
+		& .table__bottom{
+			background-color:#888;
+			height:40px;
+			box-shadow:0px 40px 50px #000;
+			width:100%;
+			float:right;
+		}
+
+	}
+
+	& .kitchen__under-table{
+		clear:both;
+		width:100%;
+		background-color:#666;
+		display:flex;
+		justify-content:center;
+
+		& .under-table__container{
+			border:1px solid blue;
+			width:75%;
+			display:flex;
+			flex-direction:column;
+			
+			& .under-table__row{
+				width:100%;
+				margin:10px 5px;
+				display:flex;
+				justify-content:space-evenly;
+				
+				& .row__slot{
+					padding:25px;
+					margin: 5px;
+					cursor:pointer;
+				}
+
+			}
+
+		}
+
+	}
+
+	& #meat{
+		background-color:#763234;
+		color:#FFF;
+		font-size:14px;
+		height:80%;
+	}
+	& #rice{
+		background-color:#D4D4A4;
+		color:#000;
+		font-size:14px;
+		height:80%;
+	}
+	& #oil{
+		background-color:#A4A153;
+		color:#FFF;
+		font-size:14px;
+		height:80%;
+	}
+}
