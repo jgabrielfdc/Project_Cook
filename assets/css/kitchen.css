@@ -10,29 +10,33 @@
 	}	
 
 	& .kitchen__table{
+		width:100%;
+	
 		& .table__top{
+			padding:8px 0px;
+			border:2px solid orange;
 			background-color:#AAA;
 			height:90px;
 			width:100%;
-			float:right;
-			padding-bottom:10px;
 			display:flex;
 			flex-direction:row-reverse;
+			justify-content:center;
+			gap:30px;			
 
 			& .plate__container{
 				width:50%;
 				height:80%;
 				margin:5px;
-				transform:translate(-8%);
 				
 				& .plate__content{
 					background-color:#556642;
 					height:60%;
 					width:100%;
 					display:flex;
-					padding:5px;
+					padding:15px;
 					border-radius:10px;
 					justify-content:space-around;
+					transform:translate(-10%);
 					
 					&:first-child{
 				
@@ -41,6 +45,7 @@
 					& .plate__item{	
 						width:51px;
 						height:36px;
+						padding:5px;
 						background-color:#FFF;
 						border-radius:50%;
 						box-shadow:2px 5px 6px #373737;
@@ -57,32 +62,30 @@
 			}
 
 			& .grill__container{
-				width:50%;
-
+				width:35%;
+				
 				& .grill__content{
-					background-image:url("../img/grelha_off.png");
-					background-size:cover;
-					border-radius:5px 5px 0px 0px;
-					height:80%;
-					width:80%;
-					transform:translate(8%,5%);
-					padding-top:2px;
+					background-color:#555;
+					height:100%;
+					width:100%;
 					
 					& .grill__top{
-						//border:3px solid #222;
-						margin:5px;
+						background-image:url("../img/textura_grill_off.png");
+						background-repeat:repeat-x;
+						border:3px solid red;
+						width:90%;
+						transform:translate(3.5%, 8%);
 						height:50%;
-						border-radius:5px;
 						display:flex;
-						justify-content:center;
+						justify-content:space-around;
 						
 					}
 					
-					& .grill__bottom{
+					/*& .grill__bottom{
 						width:100%;
-						height:10px;
-						//background-color:#555;
-					}
+						border:2px solid blue;
+						//background-color:#333;
+					}*/
 				}
 			}
 		}
@@ -91,13 +94,11 @@
 			height:40px;
 			box-shadow:0px 40px 50px #000;
 			width:100%;
-			float:right;
 		}
 
 	}
 
 	& .kitchen__under-table{
-		clear:both;
 		width:100%;
 		background-color:#666;
 		display:flex;
@@ -131,7 +132,20 @@
 		background-color:#763234;
 		color:#FFF;
 		font-size:14px;
-		height:80%;
+		height:65%;
+		border-radius:40%;
+		border:5px solid #652123;
+		cursor:pointer;
+		//box-shadow:2px 5px 2px #652123;
+	}
+	& #cooked_meat{
+		background-color:#541012;
+		color:#FFF;
+		font-size:14px;
+		height:65%;
+		border-radius:40%;
+		border:5px solid #430901;
+		cursor:pointer;
 	}
 	& #rice{
 		background-color:#D4D4A4;

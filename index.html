@@ -4,15 +4,22 @@
 		<title>Project_Cook</title>
 		<link rel='stylesheet' href='assets/css/game.css'>
 		<link rel='stylesheet' href='assets/css/kitchen.css'>
+		<link rel='stylesheet' href='assets/css/clients.css'>
 		
 	</head>
 	<body>
 		<div class='game__container'>
 			<div class='game__content'>
 				<section class='client__container'>
-					<div class='client__content'>
-						<h2>Clientes</h2>	
+					<div class='client__content' id='clientes'>	
 					</div>
+					<script>
+						for(let i=0; i<=4; i++){
+							let client=document.createElement('div');
+							client.id='cliente';
+							document.getElementById('clientes').appendChild(client);
+						}
+					</script>
 				</section>
 
 				<section class='kitchen__container'>
@@ -22,22 +29,17 @@
 								<div class='plate__container'>
 									<div class='plate__content'>
 										<div class='plate__item'>
+																										</div>
+										<div class='plate__item'>
 											
 										</div>
 										<div class='plate__item'>
-											<!--<span id='rice'>
-												Rice
-											</span>-->
-										</div>
-										<div class='plate__item'>
-											<span id='oil'>
-												Oil
-											</span>
+											
 										</div>
 									</div>
 								</div>
 								<div class='grill__container'>
-									<div class='grill__content'>
+									<div class='grill__content' id='topo__grelha'>
 										<div class='grill__top' id='grelha'>
 											
 										</div>
@@ -46,7 +48,7 @@
 									</div>
 								</div>
 							</div>
-							<div class='table__bottom'>B</div>
+							<div class='table__bottom'></div>
 						</div>
 						<div class='kitchen__under-table'>
 							<div class='under-table__container'>
@@ -92,5 +94,6 @@
 		</div>
 
 		<script src='./objects/meat.js'></script>
+		<script src='./objects/plates.js'></script>
 	</body>
 </html>
