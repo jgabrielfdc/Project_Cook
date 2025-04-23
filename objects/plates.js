@@ -15,14 +15,14 @@ function listFreePlates(){
 
 }
 
-document.addEventListener('click',function(event){
-	if(event.target.matches('#cooked_meat')){
-		const cookedMeatItem=event.target;
+grill.addEventListener('click',function(){
+	let grillItems=grill.children;
+	if(grillItems[0].id=='cooked_meat'){
+		let cookedMeatItem=grillItems[0];
 		let freePlate=listFreePlates();
 		if(cookedMeatItem.parentElement.className!='plate__item'){
 			freePlate.appendChild(cookedMeatItem);
 		}
 	}
-});
-
+})
 	

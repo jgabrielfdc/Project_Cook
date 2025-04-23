@@ -1,8 +1,10 @@
 .kitchen__container{
+	margin:0px;
 	height:100px;
 	display:flex;
 	width:100%;
 	flex-direction:column;
+	border:1px solid red;
 	
 
 	& .kitchen__content{
@@ -14,7 +16,6 @@
 	
 		& .table__top{
 			padding:8px 0px;
-			border:2px solid orange;
 			background-color:#AAA;
 			height:90px;
 			width:100%;
@@ -68,24 +69,28 @@
 					background-color:#555;
 					height:100%;
 					width:100%;
+					display:flex;
+					flex-direction:column;
+					justify-content:space-between;
 					
 					& .grill__top{
 						background-image:url("../img/textura_grill_off.png");
 						background-repeat:repeat-x;
-						border:3px solid red;
+						border:3px solid #333;
 						width:90%;
 						transform:translate(3.5%, 8%);
-						height:50%;
+						height:47%;
 						display:flex;
 						justify-content:space-around;
 						
 					}
-					
-					/*& .grill__bottom{
-						width:100%;
-						border:2px solid blue;
-						//background-color:#333;
-					}*/
+				
+					& .grill__bottom{
+						width:99%;
+						height:35%;
+						//border:2px solid yellow;
+						background-color:#333;
+					}
 				}
 			}
 		}
