@@ -16,13 +16,25 @@ function listFreePlates(){
 }
 
 grill.addEventListener('click',function(){
-	let grillItems=grill.children;
-	if(grillItems[0].id=='cooked_meat'){
-		let cookedMeatItem=grillItems[0];
-		let freePlate=listFreePlates();
-		if(cookedMeatItem.parentElement.className!='plate__item'){
-			freePlate.appendChild(cookedMeatItem);
+	try{
+		let grillItems=grill.children;
+		if(grillItems[0].id=='cooked_meat'){
+			let cookedMeatItem=grillItems[0];
+			let freePlate=listFreePlates();
+			if(cookedMeatItem.parentElement.className!='plate__item'){
+				freePlate.appendChild(cookedMeatItem);
+			}
 		}
+
+	}catch(erro){
+		
+			document.getElementById('alert__grill').innerText='Cheio';
+		let time_advice=setTimeout(function(){
+			document.getElementById('alert__grill').innerText='';
+			console.log('tempo');
+			clearTimeout(time_advice);
+		},1000)
 	}
-})
+	
+})	
 	

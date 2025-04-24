@@ -1,10 +1,10 @@
 .kitchen__container{
+	overflow:hidden;
 	margin:0px;
-	height:100px;
+	height:65%;
 	display:flex;
 	width:100%;
 	flex-direction:column;
-	border:1px solid red;
 	
 
 	& .kitchen__content{
@@ -17,7 +17,7 @@
 		& .table__top{
 			padding:8px 0px;
 			background-color:#AAA;
-			height:90px;
+			height:200px;
 			width:100%;
 			display:flex;
 			flex-direction:row-reverse;
@@ -25,15 +25,17 @@
 			gap:30px;			
 
 			& .plate__container{
-				width:50%;
-				height:80%;
+				display:flex;
+				height:100%;
 				margin:5px;
 				
 				& .plate__content{
 					background-color:#556642;
-					height:60%;
+					height:80%;
 					width:100%;
 					display:flex;
+					gap:10px;
+					flex-direction:column;
 					padding:15px;
 					border-radius:10px;
 					justify-content:space-around;
@@ -63,8 +65,9 @@
 			}
 
 			& .grill__container{
-				width:35%;
-				
+				width:20%;
+				display:flex;
+				flex-direction:column;
 				& .grill__content{
 					background-color:#555;
 					height:100%;
@@ -75,19 +78,24 @@
 					
 					& .grill__top{
 						background-image:url("../img/textura_grill_off.png");
-						background-repeat:repeat-x;
+						background-repeat:repeat-y;
+						background-size:contain;
 						border:3px solid #333;
-						width:90%;
 						transform:translate(3.5%, 8%);
-						height:47%;
+						height:80%;
+						width:70%;
 						display:flex;
-						justify-content:space-around;
+						align-self:center;
+						flex-direction:column;
+						justify-content:center;
+						align-items:center;
+						gap:5px;
 						
 					}
 				
 					& .grill__bottom{
 						width:99%;
-						height:35%;
+						height:10%;
 						//border:2px solid yellow;
 						background-color:#333;
 					}
@@ -105,6 +113,8 @@
 
 	& .kitchen__under-table{
 		width:100%;
+		height:100%;
+		max-height:220px;
 		background-color:#666;
 		display:flex;
 		justify-content:center;
@@ -137,7 +147,8 @@
 		background-color:#763234;
 		color:#FFF;
 		font-size:14px;
-		height:65%;
+		height:35px;
+		width:35px;
 		border-radius:40%;
 		border:5px solid #652123;
 		cursor:pointer;
@@ -147,7 +158,8 @@
 		background-color:#541012;
 		color:#FFF;
 		font-size:14px;
-		height:65%;
+		height:35px;
+		width:35px;
 		border-radius:40%;
 		border:5px solid #430901;
 		cursor:pointer;

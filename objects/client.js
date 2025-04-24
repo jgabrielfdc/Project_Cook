@@ -33,6 +33,7 @@ let continuar=true;
 let deskSize=0;
 
 function gerarCliente() {
+	
 	// Se existir mais de 5 pessoas no balcão não gera mais
 	if(deskSize<=4 && continuar){
 		
@@ -51,7 +52,7 @@ function gerarCliente() {
 		for(let i=0;i<amountItems;i++){
 		let item=document.createElement('span');
 		item.className='order';
-		item.innerText=clientOrder[i];
+		item.innerText="- "+clientOrder[i];
 		clientOrders.appendChild(item);	
 		}
 	
