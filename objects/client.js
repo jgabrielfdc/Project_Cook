@@ -1,4 +1,4 @@
-const productList=['meat','rice'];
+/*const productList=['meat','rice'];
 function orderGenerate(){
 	let clientOrderAmount=(Math.round(Math.random()*2)+1);
 	let clientOrder=[];
@@ -81,4 +81,4 @@ function gerarCliente() {
 }
 
 // Chamada inicial para iniciar o processo
-gerarCliente();
+gerarCliente();*/

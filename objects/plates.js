@@ -1,4 +1,4 @@
-const plateList = document.getElementsByClassName('plate__item');
+/*const plateList = document.getElementsByClassName('plate__item');
 const plateListSize = plateList.length;
 let firstPlate=undefined;
 
@@ -37,4 +37,4 @@ grill.addEventListener('click',function(){
 	}
 	
 })	
-	
+*/	
