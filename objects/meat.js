@@ -6,18 +6,22 @@ class Meat{
 	}
 }
 
-Meat.prototype.addGrillMeat=(grill)=>{
-	console.log('teste');	
-}
-let meatSource=document.getElementById('meat');
+Meat.prototype.addGrillMeat=function(grill){	
+	if(grill.grillElement.children.length<grill.grillSlots){
+		
+		// Cria um elemento carne
+		let meatItem=document.createElement('span');
+			meatItem.id=this.meatID;
+			meatItem.innerText=this.meatID;
+			meatItem.style.backgroundColor=this.meatTexture;
+			//meatItem.style.backgroundSize=80px;
+			
+		//* Adiciona a carne na grelha
+		grill.grillElement.appendChild(meatItem);
 
-let i=0;
-meatSource.addEventListener('click',function(){
-	i++;
-	let varName='meat'+i;
-	let (varName)=new Meat('meat','transparent',i);
-	console.log(meat);
-})
+		return meatItem;
+	}
+}
 
 /*//# Executa ao clicar na carne
 meat.addEventListener('click',function(){

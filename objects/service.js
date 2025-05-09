@@ -1,10 +1,34 @@
-let grill=new Grill(document.getElementById('grelha'),3)
-
-/*let pontos=0;
+//# Inicia o Placar
+let pontos=0;
 document.getElementById('pontuacao').innerText='Pontos: '+pontos;
 
+//# Recupera os objetos;
+const grill = new Grill(document.getElementById('grelha'),3);
+const meatSource = document.getElementById('meat');
+const plates = document.getElementById('plates');
+
+//# Cozinhar carne;
+meatSource.addEventListener('click',function(){
+	let meat=new Meat('meat','green',5);
+	grill.cookMeat(meat);
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 //# Recupera os pratos e cria o evento 
-const plates=document.getElementById('plates');
+
 plates.addEventListener('click',function(event){
 			
 		//# Recuperas os clientes
