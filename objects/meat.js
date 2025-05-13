@@ -10,10 +10,9 @@ Meat.prototype.addGrillMeat=function(grill){
 	if(grill.grillElement.children.length<grill.grillSlots){
 		
 		// Cria um elemento carne
-		let meatItem=document.createElement('span');
-			meatItem.id=this.meatID;
+		let meatItem=document.createElement('img');
 			meatItem.innerText=this.meatID;
-			meatItem.style.backgroundColor=this.meatTexture;
+			meatItem.src='assets/img/carne_crua.png';
 			//meatItem.style.backgroundSize=80px;
 			
 		//* Adiciona a carne na grelha

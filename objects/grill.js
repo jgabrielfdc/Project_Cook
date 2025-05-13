@@ -16,7 +16,7 @@ Grill.prototype.cookMeat=function(meatObject){
 
 	// Cozinha a carne
 	let cook_timer=setTimeout(function(){
-			meatItem.id='cooked_meat';
+			meatItem.src='assets/img/carne_assada.png';
 			console.log(meatItem);
 			clearTimeout(cook_timer);
 	},5000);
