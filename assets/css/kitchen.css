@@ -2,102 +2,112 @@
 	overflow:hidden;
 	margin:0px;
 	height:65%;
+	width:100vw;
 	display:flex;
-	width:100%;
 	flex-direction:column;
 	
-
 	& .kitchen__content{
-		width:100%;
+		width:100vw;
 	}	
 
 	& .kitchen__table{
-		width:100%;
-	
+		width:100vw;
 		& .table__top{
-			padding:8px 0px;
+			padding:0px 15px 0px 0px;
 			background-color:#AAA;
 			height:200px;
-			width:100%;
 			display:flex;
-			flex-direction:row-reverse;
-			justify-content:center;
-			gap:30px;			
+			flex-direction:column;
+			justify-content:center;			
 
-			& .plate__container{
+			& .row{
+				height:50%;
+				width:100%;
+				padding:10px 6px;				
 				display:flex;
-				height:100%;
-				margin:5px;
-				
-				& .plate__content{
-					background-color:#556642;
-					height:80%;
-					width:100%;
-					display:flex;
-					gap:10px;
-					flex-direction:column;
-					padding:15px;
-					border-radius:10px;
-					justify-content:space-around;
-					transform:translate(-10%);
-					
-					&:first-child{
-				
-					}
-
-					& .plate__item{	
-						width:51px;
-						height:36px;
-						padding:5px;
-						background-color:#FFF;
-						border-radius:50%;
-						box-shadow:2px 5px 6px #373737;
+				flex-direction:row;
+				justify-content:space-between;
+	
+				& .plate__container{
+					height:fit-content;
+					& .plate__content{
+						transform:translate(-10%, 10%);
+						background-color:#556642;
+						width:100%;
 						display:flex;
-						justify-content:center;
-						align-items:center;
-						& span{
+						gap:5px;
+						flex-direction:row;
+						padding:10px;
+						border-radius:10px;
+						justify-content:space-around;
+
+						& .plate__item{	
+							width:51px;
+							height:36px;
+							padding:5px;
+							background-color:#FFF;
 							border-radius:50%;
-							width:60%;
-							text-align:center;
+							box-shadow:2px 5px 6px #373737;
+							display:flex;
+							justify-content:center;
+							align-items:center;
+							
 						}
 					}
 				}
-			}
 
-			& .grill__container{
-				width:20%;
-				display:flex;
-				flex-direction:column;
-				& .grill__content{
-					background-color:#555;
-					height:100%;
-					width:100%;
+				& .grill__container{
+					width:40%;
 					display:flex;
 					flex-direction:column;
-					justify-content:space-between;
+					min-height:50px !important;
 					
-					& .grill__top{
-						background-image:url("../img/textura_grill_off.png");
-						background-repeat:repeat-y;
-						background-size:contain;
-						border:3px solid #333;
-						transform:translate(3.5%, 8%);
-						height:80%;
-						width:70%;
+					& .grill__content{
+						background-color:#555;
+						width:100%;
 						display:flex;
-						align-self:center;
-						flex-direction:column;
-						justify-content:center;
-						align-items:center;
-						gap:5px;
+						justify-content:space-between;
+						padding:5px 5px;
+					
+						& .grill__top{
+							background-image:url("../img/textura_grill_off.png");
+							background-repeat:repeat-x;
+							background-size:contain;
+							border:3px solid #333;
+							height:80%;
+							width:100%;
+							min-height:64px;
+							display:flex;
+							align-self:center;
+							justify-content:center;
+							align-items:end;
+							gap:5px;	
 						
+						}
 					}
+				}
 				
-					& .grill__bottom{
-						width:99%;
-						height:10%;
-						//border:2px solid yellow;
-						background-color:#333;
+				& .ingredients__container{
+					width:fit-content;
+					height:5em;
+					margin:0px;
+					& .ingredients__content{
+						background-color:#888;
+						border-radius:10px;
+						margin:0px;
+						width:fit-content;
+						height:4.5em;
+						display:flex;			
+						align-items:start;
+						padding:10px 10px 0px 10px;
+						gap:5px;
+						& .ingredient__platter{
+							border: 1px solid #444;
+							height:3em;
+							width:4em;
+							background-size:30px !important;
+							box-shadow:inset 0px -10px 0px #333;
+						}
 					}
 				}
 			}
@@ -108,13 +118,12 @@
 			box-shadow:0px 40px 50px #000;
 			width:100%;
 		}
-
 	}
 
 	& .kitchen__under-table{
 		width:100%;
 		height:100%;
-		max-height:220px;
+		min-height:250px;
 		background-color:#666;
 		display:flex;
 		justify-content:center;
@@ -125,12 +134,17 @@
 			display:flex;
 			flex-direction:column;
 			
-			& .under-table__row{
+			& .row{
+				height:50%;
 				width:100%;
-				margin:10px 5px;
+				padding:10px 6px;				
 				display:flex;
-				justify-content:space-evenly;
-				
+				flex-direction:row;
+				justify-content:space-between;
+
+				& *:hover{
+					border:1px solid red;
+				}
 				& .row__slot{
 					padding:25px;
 					margin: 5px;
@@ -143,28 +157,16 @@
 
 	}
 
-	& #meat{
-		background-color:#763234;
-		color:#FFF;
-		font-size:14px;
-		height:35px;
-		width:35px;
-		border-radius:40%;
-		border:5px solid #652123;
-		cursor:pointer;
-		//box-shadow:2px 5px 2px #652123;
-	}
-	& #cooked_meat{
-		background-color:#541012;
-		color:#FFF;
-		font-size:14px;
-		height:35px;
-		width:35px;
-		border-radius:40%;
-		border:5px solid #430901;
-		cursor:pointer;
-	}
-	& #rice{
+		img{
+			transform:translate(0%, -20%);
+			width:90%;
+			text-align:center;
+			filter: drop-shadow(0px 2px 1px);
+			max-height:50px;
+			max-width:50px;
+		}
+
+		& #rice{
 		background-color:#D4D4A4;
 		color:#000;
 		font-size:14px;
