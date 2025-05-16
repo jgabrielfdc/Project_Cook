@@ -1,19 +1,54 @@
+// # Variaveis Iniciais
+const products=['burguer',
+				'hamburguer',
+				'cheeseburguer',
+				'refrigerante_cola',
+				'refrigerante_lima',
+				'refrigerante_uva'];
+
+const skins=['#F7F342',
+			'#568923',
+			'#F93A52',
+			'#68D930',
+			'#43EC22'];
+
+const faces=['O_O',
+			'0_0',
+			'-_-',
+			'=_=',
+			'O-O',
+			'*-*',
+			'*_*',
+			'1_1'];
+
+let randomSkin;
+let randomFace;
+let randomTimer; // Declara randomTimer fora do setInterval
+let customerGenerator=undefined;
+let deskSize=0;
+
+//# Recupera os objetos;
+function getElement(element){
+	return document.getElementById(element);
+}
+
+const grill = new Grill(getElement('grelha'),3);
+const plates = new Plate(getElement('plates'));
+const bread = new Bread(getElement('bread'));
+let meat= new Meat(getElement('meat'),'meat','green',5);;
+const customer=new Customer(products,faces,skins);
+
+bread.addBread();
+customer.createCustomer();
+
 //# Inicia o Placar
 let pontos=0;
 document.getElementById('pontuacao').innerText='Pontos: '+pontos;
+grill.cookMeat();
+meat.addGrillMeat(grill);
 
-//# Recupera os objetos;
-const grill = new Grill(document.getElementById('grelha'),3);
-const meatSource = document.getElementById('meat');
-const plates = document.getElementById('plates');
-
-//# Cozinhar carne;
-meatSource.addEventListener('click',function(){
-	let meat=new Meat('meat','green',5);
-	grill.cookMeat(meat);
-})
-
-
+// # Servir Carne
+grill.serveMeat(()=>plates.getFreePlate());
 
 
 

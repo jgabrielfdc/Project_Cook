@@ -1,6 +1,6 @@
 .client__container{
 	width:100%;
-	height:35%;
+	height:50%;
 	margin:0px;
 	padding:0px;
 
@@ -11,15 +11,14 @@
 		justify-content:space-evenly;
 		
 		& .cliente{
-			width:65px
-			background-color:#566788;
+			width:65px;
 			
 			& .face{
 				border-radius:15px 15px 0px 0px;
 				padding:3px 5px;
 				font-size:150%;
 				height:105px;
-				width:100%;
+				width:60px;
 				display:flex;
 				justify-content:center;
 				align-items:start;
@@ -28,14 +27,17 @@
 			
 			& .orders{
 				display:flex;
-				background-color:#EEE;
-				padding:2px 5px;
-				transform:translate(30%, -20%);
+				background-color:#000;
+				transform:translate(20px, -10px);
 				flex-direction:column;
-				
-				
+				border-radius:15px;
+				width:fit-content;
+				padding:5px;
+				gap:5px;
 				& .order{
 					background-color:#fff;
+					padding:4px;
+					border-radius:10px;
 				}
 			}
 		}
