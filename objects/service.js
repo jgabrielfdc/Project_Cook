@@ -34,21 +34,27 @@ function getElement(element){
 
 const grill = new Grill(getElement('grelha'),3);
 const plates = new Plate(getElement('plates'));
-const bread = new Bread(getElement('bread'));
+const bread_top=new Bread(getElement('bread_top'));
+const bread_base= new Bread(getElement('bread_base'));
 let meat= new Meat(getElement('meat'),'meat','green',5);;
 const customer=new Customer(products,faces,skins);
 
-bread.addBread();
+getElement('plates').addEventListener('click',function(){
+	plates.getBreadPlate()
+})
 customer.createCustomer();
 
 //# Inicia o Placar
 let pontos=0;
 document.getElementById('pontuacao').innerText='Pontos: '+pontos;
-grill.cookMeat();
 meat.addGrillMeat(grill);
 
 // # Servir Carne
-grill.serveMeat(()=>plates.getFreePlate());
+bread_top.addBreadTop(()=>plates.getPlate('burguer_step1'))
+bread_base.addBreadBase(()=>plates.getFreePlate());
+grill.serveMeat(()=>plates.getPlate('bread_base'));
+
+
 
 
 

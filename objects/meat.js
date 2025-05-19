@@ -20,8 +20,9 @@ Meat.prototype.addGrillMeat=function(grill){
 	let self=this;
 		this.meatSource.addEventListener('mouseup',function(){
 			if(grill.grillElement.children.length<grill.grillSlots){
-				grill.grillElement.appendChild(self.createMeat());
-				grill.cookMeat(self);
+				let meatItem=self.createMeat();
+				grill.grillElement.appendChild(meatItem);
+				grill.cookMeat(meatItem);
 			}
 		})
 }

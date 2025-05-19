@@ -71,11 +71,8 @@ Customer.prototype.createFace=function(){
 
 Customer.prototype.createCustomer=function(){
 	if(deskSize<=4){
-		
 		// Gera um intervalo aleatorio
 		randomTimer = Math.round(Math.random() * 15) * 1000;
-		
-		console.log(this.createOrderList().children);
 		
 		//Criando o elemento do cliente e recuperando suas caracteristicas e pedidos
 		let customer=document.createElement('div');
