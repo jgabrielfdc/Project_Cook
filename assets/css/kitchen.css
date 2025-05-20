@@ -1,170 +1,178 @@
-.kitchen__container{
-	overflow:hidden;
-	margin:0px;
-	height:65%;
-	width:100vw;
-	display:flex;
-	flex-direction:column;
-	
-	& .kitchen__content{
-		width:100vw;
-	}	
+.kitchen__container {
+	overflow: hidden;
+	margin: 0;
+	height: 65%;
+	width: 100vw;
+	display: flex;
+	flex-direction: column;
+}
 
-	& .kitchen__table{
-		width:100vw;
-		& .table__top{
-			padding:0px 15px 0px 0px;
-			background-color:#AAA;
-			height:200px;
-			display:flex;
-			flex-direction:column;
-			justify-content:center;			
+/* Conteúdo principal */
+.kitchen__container .kitchen__content {
+	width: 100vw;
+}
 
-			& .row{
-				height:50%;
-				width:100%;
-				padding:10px 6px;				
-				display:flex;
-				flex-direction:row;
-				justify-content:space-between;
-	
-				& .plate__container{
-					height:fit-content;
-					& .plate__content{
-						transform:translate(-10%, 10%);
-						background-color:#556642;
-						width:100%;
-						display:flex;
-						gap:5px;
-						flex-direction:row;
-						padding:10px;
-						border-radius:10px;
-						justify-content:space-around;
+/* Mesa principal */
+.kitchen__container .kitchen__table {
+	width: 100vw;
+}
 
-						& .plate__item{	
-							width:51px;
-							height:36px;
-							padding:5px;
-							background-color:#FFF;
-							border-radius:50%;
-							box-shadow:2px 5px 6px #373737;
-							display:flex;
-							justify-content:center;
-							align-items:center;
-							
-						}
-					}
-				}
+/* Parte superior da mesa */
+.kitchen__table .table__top {
+	padding: 0 15px 0 0;
+	background-color: #AAA;
+	height: 200px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
 
-				& .grill__container{
-					width:40%;
-					display:flex;
-					flex-direction:column;
-					min-height:50px !important;
-					
-					& .grill__content{
-						width:100%;
-						display:flex;
-						justify-content:space-between;
-						padding:5px 5px;
-						background:url('../img/grelha_off.png');
-						background-repeat:no-repeat;
-						background-size:contain;
-					
-						& .grill__top{
-							background-repeat:repeat-x;
-							background-size:contain;
-							height:80%;
-							width:100%;
-							min-height:64px;
-							display:flex;
-							align-self:center;
-							justify-content:center;
-							align-items:end;
-							gap:5px;	
-						
-						}
-					}
-				}
-				
-				& .ingredients__container{
-					width:fit-content;
-					height:5em;
-					margin:0px;
-					
-					& .ingredients__content{
-						background-color:#888;
-						border-radius:10px;
-						margin:0px;
-						width:fit-content;
-						height:4.5em;
-						display:flex;			
-						align-items:start;
-						padding:10px 10px 0px 10px;
-						gap:5px;
-						
-						& .ingredient__platter{
-							border: 1px solid #444;
-							height:3em;
-							width:4em;
-							background-size:30px !important;
-							box-shadow:inset 0px -10px 0px #333;
-						}
-					}
-				}
-			}
-		}
-		& .table__bottom{
-			background-color:#888;
-			height:40px;
-			box-shadow:0px 40px 50px #000;
-			width:100%;
-		}
-	}
+/* Linha de itens (pratos, grelha, ingredientes) */
+.table__top .row {
+	height: 50%;
+	width: 100%;
+	padding: 10px 6px;
+	display: flex;
+	justify-content: space-between;
+}
 
-	& .kitchen__under-table{
-		width:100%;
-		max-height:300px;
-		min-height:220px;
-		background-color:#666;
-		display:flex;
-		justify-content:center;
+/* Container de pratos */
+.row .plate__container {
+	height: fit-content;
+}
 
-		& .under-table__container{
-			border:1px solid blue;
-			width:75%;
-			display:flex;
-			flex-direction:column;
-			
-			& .row{
-				height:50%;
-				width:100%;
-				padding:10px 6px;				
-				display:flex;
-				flex-direction:row;
-				justify-content:space-between;
+.plate__container .plate__content {
+	transform: translate(-10%, 10%);
+	background-color: #556642;
+	width: 100%;
+	display: flex;
+	gap: 5px;
+	padding: 10px;
+	border-radius: 10px;
+	justify-content: space-around;
+}
 
-				& *:hover{
-					border:1px solid red;
-				}
-				& .row__slot{
-					padding:25px;
-					margin: 5px;
-					cursor:pointer;
-				}
+.plate__content .plate__item {
+	width: 51px;
+	height: 36px;
+	padding: 5px;
+	background-color: #FFF;
+	border-radius: 50%;
+	box-shadow: 2px 5px 6px #373737;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
 
-			}
+/* Container da grelha */
+.row .grill__container {
+	width: 40%;
+	display: flex;
+	flex-direction: column;
+	min-height: 50px;
+}
 
-		}
+.grill__container .grill__content {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	padding: 5px;
+	background: url('../img/grelha_off.png') no-repeat;
+	background-size: contain;
+}
 
-	}
+.grill__content .grill__top {
+	background-repeat: repeat-x;
+	background-size: contain;
+	height: 80%;
+	width: 100%;
+	min-height: 64px;
+	display: flex;
+	justify-content: center;
+	align-items: flex-end;
+	gap: 5px;
+}
 
-	img{
-		transform:translate(0%, -20%);
-		width:90%;
-		text-align:center;
-		filter: drop-shadow(0px 2px 1px);
-		max-height:50px;
-		max-width:50px;
-	}
+/* Ingredientes */
+.row .ingredients__container {
+	width: fit-content;
+	height: 5em;
+	margin: 0;
+}
+
+.ingredients__container .ingredients__content {
+	background-color: #888;
+	border-radius: 10px;
+	width: fit-content;
+	height: 4.5em;
+	display: flex;
+	align-items: flex-start;
+	padding: 10px 10px 0 10px;
+	gap: 5px;
+}
+
+.ingredients__content .ingredient__platter {
+	border: 1px solid #444;
+	height: 3em;
+	width: 4em;
+	background-size: 30px !important;
+	box-shadow: inset 0 -10px 0 #333;
+}
+
+/* Parte inferior da mesa */
+.kitchen__table .table__bottom {
+	background-color: #888;
+	height: 40px;
+	box-shadow: 0 40px 50px #000;
+	width: 100%;
+}
+
+/* Área sob a mesa */
+.kitchen__container .kitchen__under-table {
+	width: 100%;
+	max-height: 300px;
+	min-height: 220px;
+	background-color: #666;
+	display: flex;
+	justify-content: center;
+}
+
+.under-table__container {
+	height:12.4em;
+	width: 75%;
+	display: flex;
+	padding:3px 0px;
+	gap:5px;
+	justify-content:center;
+	flex-direction: column;
+}
+
+.under-table__container .row {
+	border:1px solid #000;
+	height: 6em;
+	width: 20.6em;
+	gap:5px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.under-table__container .row *:hover {
+	border: 1px solid red;
+}
+
+.row__slot {
+	background-color:gray;
+	min-width:50%;
+	min-height:5em;
+	cursor: pointer;
+}
+
+/* Imagens gerais */
+.kitchen__container img {
+	transform: translate(0, -20%);
+	width: 90%;
+	text-align: center;
+	filter: drop-shadow(0 2px 1px);
+	max-height: 50px;
+	max-width: 50px;
 }

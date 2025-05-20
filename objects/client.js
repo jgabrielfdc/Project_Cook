@@ -56,7 +56,7 @@ Customer.prototype.createOrderItem=function(order){
 			item.style.height='40px';
 			item.style.width='40px';
 			item.innerText=order;
-		
+			item.id=order;
 	return item;
 }
 
@@ -93,4 +93,8 @@ Customer.prototype.createCustomer=function(){
 		
 	// Atualiza a quantidade de pessoas no balcão
 	deskSize=document.getElementById('clientes').children.length;
+}
+
+Customer.prototype.verifyOrders=function(){
+	
 }

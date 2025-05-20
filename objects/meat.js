@@ -1,29 +1,35 @@
-class Meat{
-	constructor(meatSource,meatID,meatTexture,meatCookingTime){
-		this.meatSource=meatSource;
-		this.meatID=meatID;
-		this.meatTexture=meatTexture;
-		this.meatCookingTime=meatCookingTime;
+class Meat {
+	constructor(meatSource, meatID, meatTexture, meatCookingTime) {
+		this.meatSource = meatSource;
+		this.meatID = meatID;
+		this.meatTexture = meatTexture;
+		this.meatCookingTime = meatCookingTime;
 	}
-}
 
-Meat.prototype.createMeat=function(){
-
-		let meatItem=document.createElement('img');
-			meatItem.innerText=this.meatID;
-			meatItem.src='assets/img/carne_crua.png';
-
+	createMeat() {
+		const meatItem = document.createElement('img');
+		meatItem.alt = `Meat ${this.meatID}`;
+		meatItem.dataset.id = this.meatID;
+		meatItem.src = this.meatTexture || 'assets/img/carne_crua.png';
+		meatItem.classList.add('meat-item'); // Boa prática para estilização futura
 		return meatItem;
-}
+	}
 
-Meat.prototype.addGrillMeat=function(grill){	
-	let self=this;
-		this.meatSource.addEventListener('mouseup',function(){
-			if(grill.grillElement.children.length<grill.grillSlots){
-				let meatItem=self.createMeat();
+	addGrillMeat(grill) {
+		if (!this.meatSource || !grill || !grill.grillElement) {
+			console.error('Meat source ou grill inválido.');
+			return;
+		}
+
+		this.meatSource.addEventListener('mouseup', () => {
+			const currentSlots = grill.grillElement.children.length;
+			if (currentSlots < grill.grillSlots) {
+				const meatItem = this.createMeat();
 				grill.grillElement.appendChild(meatItem);
 				grill.cookMeat(meatItem);
+			} else {
+				console.warn('Grelha cheia. Não é possível adicionar mais carne.');
 			}
-		})
+		});
+	}
 }
-

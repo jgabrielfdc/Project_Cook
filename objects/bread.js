@@ -1,44 +1,55 @@
-class Bread{
-	constructor(source){
-		this.source=source;
+class Bread {
+	constructor(source) {
+		this.source = source;
 	}
-}
 
-Bread.prototype.createBread=function(){
-	let breadItem=document.createElement('img');
-		breadItem.id='bread_base';
-		breadItem.innerText='';
-		breadItem.src='assets/img/pao_base.png';
-	
-	return breadItem;
-}
-
-Bread.prototype.addBreadBase=function(getFreePlate){
-	let self=this;
-	this.source.onmouseup=()=>{
-		try{
-			let freePlate=getFreePlate();
-
-			if(freePlate!=undefined){
-				freePlate.appendChild(self.createBread());
-			}
-		}catch(erro){
-		
-		}
+	createBread() {
+		const breadItem = document.createElement('img');
+		breadItem.id = 'bread_base';
+		breadItem.src = 'assets/img/pao_base.png';
+		breadItem.alt = 'Base de Pão';
+		breadItem.classList.add('bread-item');
+		return breadItem;
 	}
-}
 
-Bread.prototype.addBreadTop=function(findStep){
-	
-	this.source.onmouseup=()=>{
-		try{
-			let step=findStep('burguer_step1')	
-			console.log(step);
-			if(step==undefined){
-				throw new Error('Precisa de um Hamburguer')
-			}
-		}catch(erro){
-			console.log(erro)
+	addBreadBase(getFreePlate) {
+		if (!this.source || typeof getFreePlate !== 'function') {
+			console.error('Fonte do pão ou função getFreePlate inválida.');
+			return;
 		}
+
+		this.source.addEventListener('mouseup', () => {
+			try {
+				const freePlate = getFreePlate();
+				if (freePlate) {
+					freePlate.appendChild(this.createBread());
+				} else {
+					console.warn('Nenhum prato livre disponível.');
+				}
+			} catch (erro) {
+				console.error('Erro ao adicionar base do pão:', erro.message);
+			}
+		});
+	}
+
+	addBreadTop(findStep) {
+		if (!this.source || typeof findStep !== 'function') {
+			console.error('Fonte do pão ou função findStep inválida.');
+			return;
+		}
+
+		this.source.addEventListener('mouseup', () => {
+			try {
+				const step = findStep('burguer_step1');
+				if (!step) {
+					throw new Error('Precisa de um Hamburguer');
+				}
+				step.id = 'burguer';
+				step.src = 'assets/img/burguer.png';
+				step.alt = 'Hamburguer Pronto';
+			} catch (erro) {
+				console.error('Erro ao adicionar topo do pão:', erro.message);
+			}
+		});
 	}
 }

@@ -1,116 +1,59 @@
-// # Variaveis Iniciais
-const products=['burguer',
-				'hamburguer',
-				'cheeseburguer',
-				'refrigerante_cola',
-				'refrigerante_lima',
-				'refrigerante_uva'];
+// # Variáveis Iniciais
+const products = [
+	'burguer',
+	'hamburguer',
+	'cheeseburguer',
+	'refrigerante_cola',
+	'refrigerante_lima',
+	'refrigerante_uva'
+];
 
-const skins=['#F7F342',
-			'#568923',
-			'#F93A52',
-			'#68D930',
-			'#43EC22'];
+const skins = ['#F7F342', '#568923', '#F93A52', '#68D930', '#43EC22'];
 
-const faces=['O_O',
-			'0_0',
-			'-_-',
-			'=_=',
-			'O-O',
-			'*-*',
-			'*_*',
-			'1_1'];
+const faces = ['O_O', '0_0', '-_-', '=_=', 'O-O', '*-*', '*_*', '1_1'];
 
 let randomSkin;
 let randomFace;
-let randomTimer; // Declara randomTimer fora do setInterval
-let customerGenerator=undefined;
-let deskSize=0;
+let randomTimer;
+let customerGenerator = undefined;
+let deskSize = 0;
 
-//# Recupera os objetos;
-function getElement(element){
-	return document.getElementById(element);
+// # Recupera elementos por ID
+function getElement(id) {
+	return document.getElementById(id);
 }
 
-const grill = new Grill(getElement('grelha'),3);
+// # Instancia os objetos
+const grill = new Grill(getElement('grelha'), 3);
 const plates = new Plate(getElement('plates'));
-const bread_top=new Bread(getElement('bread_top'));
-const bread_base= new Bread(getElement('bread_base'));
-let meat= new Meat(getElement('meat'),'meat','green',5);;
-const customer=new Customer(products,faces,skins);
+const breadTop = new Bread(getElement('bread_top'));
+const breadBase = new Bread(getElement('bread_base'));
+const soda=new Soda();
+const meat = new Meat(getElement('meat'), 'meat', 'assets/img/carne_crua.png', 5);
+const customer = new Customer(products, faces, skins);
 
-getElement('plates').addEventListener('click',function(){
-	plates.getBreadPlate()
-})
 customer.createCustomer();
 
-//# Inicia o Placar
-let pontos=0;
-document.getElementById('pontuacao').innerText='Pontos: '+pontos;
+// # Inicia o placar
+let pontos = 0;
+getElement('pontuacao').innerText = 'Pontos: ' + pontos;
+
+// # Associa eventos
 meat.addGrillMeat(grill);
 
-// # Servir Carne
-bread_top.addBreadTop(()=>plates.getPlate('burguer_step1'))
-bread_base.addBreadBase(()=>plates.getFreePlate());
-grill.serveMeat(()=>plates.getPlate('bread_base'));
+// # Servir carne
+breadTop.addBreadTop(() => plates.getPlate('burguer_step1'));
+breadBase.addBreadBase(() => plates.getFreePlate());
+grill.serveMeat(() => plates.getPlate('bread_base'));
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-//# Recupera os pratos e cria o evento 
-
-plates.addEventListener('click',function(event){
-			
-		//# Recuperas os clientes
-		let findOrder=false;
-		let element=event.target;
-		let allCustomers=document.getElementById('clientes').children;
-
-		if(element.matches('#cooked_meat')){
-			for(let i=0;i<allCustomers.length;i++){
-			
-			//# Recupera o cliente
-			let customer=allCustomers[i];
-
-			//# Recupera os pedidos
-			let customerOrder=customer.children[0].children;
-			for(let i=0;i<customerOrder.length;i++){
-					console.log(customerOrder[i].innerText);
-				//# Verifica cada pedido e finaliza caso encontre
-				if(customerOrder[i].innerText=="- meat"){
-						
-						//# Remove o target e o pedido (Efeito de entrega)
-						element.remove()
-						customerOrder[i].remove();
-						pontos+=10;
-						findOrder=true;
-					break;
-				}
-			}
-			
-			if(findOrder){
-				document.getElementById('pontuacao').innerHTML='Pontos: '+pontos;
-				console.log(customerOrder)
-				if(customerOrder.length==0){
-					console.log('Vazia')
-					pontos+=30;
-					customer.remove()
-					document.getElementById('pontuacao').innerHTML='Pontos: '+pontos;
-				}
-				break;
-			
-			}
-	}
+// # Evento de clique nos pratos
+getElement('plates').onclick = function (event) {
+	let customers=getElement('clientes');
+	customers=Array.from(customers.getElementsByTagName('img'))
+	if(customers.find(item=>item.id==event.target.id)){
+		customers.find(item=>item.id==event.target.id).remove()
+		if(event.target.className!='plate__item'){
+			event.target.remove();	
 		}
-})*/
+	}
+};
