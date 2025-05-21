@@ -6,15 +6,16 @@
 
 html,body{
 	height:100rem;
-	width:100rem;
 	margin:0px;
 	padding:0px;
 	overflow:hidden;
+	display:flex;
+	justify-content:center;
 }
 
 .game__container{
 	border:2px solid #445566;
-	width:100em;
+	width:450px;
 	height:100em;
 	background-color:#494959;
 }

@@ -1,10 +1,15 @@
 class Soda{
+	constructor(customers){
+		this.customers=customers
+	}
 	serveSoda(event){
-		console.log(event.target.id)
 		let orders=getElement('clientes').getElementsByTagName('img');
 		orders=Array.from(orders)
 		if(orders.find(item=>item.id==event.target.id)){
-			orders.find(item=>item.id==event.target.id).remove();
+			let order=orders.find(item=>item.id==event.target.id)
+			let customer=order.parentNode.parentNode;
+			order.remove();
+			this.customers.verifyOrders(customer)
 		}
 	}
 }

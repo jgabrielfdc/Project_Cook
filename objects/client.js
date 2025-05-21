@@ -95,6 +95,10 @@ Customer.prototype.createCustomer=function(){
 	deskSize=document.getElementById('clientes').children.length;
 }
 
-Customer.prototype.verifyOrders=function(){
-	
+Customer.prototype.verifyOrders=function(customer){
+	console.log('Entrou')
+	let orderAmount=customer.children[0].children.length;
+	if(orderAmount<1){
+		customer.remove()
+	}
 }

@@ -28,9 +28,9 @@ const grill = new Grill(getElement('grelha'), 3);
 const plates = new Plate(getElement('plates'));
 const breadTop = new Bread(getElement('bread_top'));
 const breadBase = new Bread(getElement('bread_base'));
-const soda=new Soda();
 const meat = new Meat(getElement('meat'), 'meat', 'assets/img/carne_crua.png', 5);
 const customer = new Customer(products, faces, skins);
+const soda=new Soda(customer);
 
 customer.createCustomer();
 
@@ -45,15 +45,4 @@ meat.addGrillMeat(grill);
 breadTop.addBreadTop(() => plates.getPlate('burguer_step1'));
 breadBase.addBreadBase(() => plates.getFreePlate());
 grill.serveMeat(() => plates.getPlate('bread_base'));
-
-// # Evento de clique nos pratos
-getElement('plates').onclick = function (event) {
-	let customers=getElement('clientes');
-	customers=Array.from(customers.getElementsByTagName('img'))
-	if(customers.find(item=>item.id==event.target.id)){
-		customers.find(item=>item.id==event.target.id).remove()
-		if(event.target.className!='plate__item'){
-			event.target.remove();	
-		}
-	}
-};
+plates.serveFood(getElement('plates'),getElement('clientes'),customer)

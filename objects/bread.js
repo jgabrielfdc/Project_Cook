@@ -18,7 +18,7 @@ class Bread {
 			return;
 		}
 
-		this.source.addEventListener('mouseup', () => {
+		this.source.onmouseup=() => {
 			try {
 				const freePlate = getFreePlate();
 				if (freePlate) {
@@ -29,7 +29,7 @@ class Bread {
 			} catch (erro) {
 				console.error('Erro ao adicionar base do pão:', erro.message);
 			}
-		});
+		}
 	}
 
 	addBreadTop(findStep) {

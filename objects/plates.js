@@ -25,4 +25,20 @@ class Plate {
 			return null;
 		}
 	}
+	
+	serveFood(plates,customers,customerObject){
+		plates.onclick=(event)=>{
+			if(event.target.className!='plate__item' && event.target.className!='pao_base'){
+				let orders=Array.from(customers.getElementsByTagName('img'))
+				if(orders.find(item=>item.id==event.target.id)){
+					let product=orders.find(item=>item.id==event.target.id);
+					let customer=product.parentNode.parentNode;
+					product.remove();
+					event.target.remove();	
+					customerObject.verifyOrders(customer);
+				}
+			}
+		}
+	}
+		
 }

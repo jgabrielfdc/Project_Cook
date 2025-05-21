@@ -9,7 +9,7 @@
 
 /* Conteúdo principal */
 .kitchen__container .kitchen__content {
-	width: 100vw;
+	width: 450px;
 }
 
 /* Mesa principal */
@@ -22,6 +22,7 @@
 	padding: 0 15px 0 0;
 	background-color: #AAA;
 	height: 200px;
+	width:437px;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -124,7 +125,7 @@
 	background-color: #888;
 	height: 40px;
 	box-shadow: 0 40px 50px #000;
-	width: 100%;
+	width: 28.27em;
 }
 
 /* Área sob a mesa */
