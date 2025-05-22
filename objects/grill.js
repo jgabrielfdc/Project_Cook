@@ -12,7 +12,7 @@ Grill.prototype.cookMeat = function (meatItem) {
 	// Cozinha a carne após 5 segundos
 	setTimeout(() => {
 		meatItem.id = 'cooked_meat';
-		meatItem.src = 'assets/img/carne_assada.png';
+		meatItem.src = '../assets/img/carne_assada.png';
 		this.updateGrillVisual(); // Atualiza visual novamente se necessário
 	}, 5000);
 };
@@ -30,7 +30,7 @@ Grill.prototype.serveMeat = function (getPlate) {
 						item.remove();
 
 						breadPlate.id = 'burguer_step1';
-						breadPlate.src = 'assets/img/burguer_step1.png';
+						breadPlate.src = '../assets/img/burguer_step1.png';
 
 						this.updateGrillVisual();
 					}
@@ -44,8 +44,8 @@ Grill.prototype.serveMeat = function (getPlate) {
 Grill.prototype.updateGrillVisual = function () {
 	const topoGrelha = document.getElementById('topo__grelha');
 	if (this.grillElement.children.length === 0) {
-		topoGrelha.style.backgroundImage = 'url("assets/img/grelha_off.png")';
+		topoGrelha.style.backgroundImage = 'url("../assets/img/grelha_off.png")';
 	} else {
-		topoGrelha.style.backgroundImage = 'url("assets/img/grelha_on.png")';
+		topoGrelha.style.backgroundImage = 'url("../assets/img/grelha_on.png")';
 	}
 };

@@ -10,7 +10,7 @@ class Meat {
 		const meatItem = document.createElement('img');
 		meatItem.alt = `Meat ${this.meatID}`;
 		meatItem.dataset.id = this.meatID;
-		meatItem.src = this.meatTexture || 'assets/img/carne_crua.png';
+		meatItem.src = this.meatTexture || '../assets/img/carne_crua.png';
 		meatItem.classList.add('meat-item'); // Boa prática para estilização futura
 		return meatItem;
 	}

@@ -5,6 +5,8 @@ class Customer{
 		this.skins=skins;
 		this.orders=[];
 	}
+
+
 }
 
 // X
@@ -39,24 +41,24 @@ Customer.prototype.createOrderList=function(){
 
 	let customerOrderList=document.createElement('div');
 		customerOrderList.className='orders';
-		let amountItems=orderList.length;
+		let self=this;
 
-		for(let i=0;i<amountItems;i++){
-			let item=this.createOrderItem(orderList[i]);
-			customerOrderList.appendChild(item);	
-		}
-	
+	for(let item of orderList){
+		customerOrderList.appendChild(self.createOrderItem(item))
+	}
+
 	return customerOrderList;
 }
 
 Customer.prototype.createOrderItem=function(order){
 	let item=document.createElement('img');
 			item.className='order';
-			item.src='assets/img/'+order+'.png';
+			item.src='../assets/img/'+order+'.png';
 			item.style.height='40px';
 			item.style.width='40px';
 			item.innerText=order;
 			item.id=order;
+			item.style.border='3px dotted #F00'
 	return item;
 }
 
@@ -65,6 +67,7 @@ Customer.prototype.createFace=function(){
 		customerFace.className='face';
 		customerFace.innerText=this.generateCustomerAttributes().face;
 		customerFace.style.backgroundColor=this.generateCustomerAttributes().skin;
+		customerFace.style.border='3px solid #000'
 	
 	return customerFace
 }
@@ -96,9 +99,10 @@ Customer.prototype.createCustomer=function(){
 }
 
 Customer.prototype.verifyOrders=function(customer){
-	console.log('Entrou')
 	let orderAmount=customer.children[0].children.length;
 	if(orderAmount<1){
 		customer.remove()
 	}
 }
+
+Customer

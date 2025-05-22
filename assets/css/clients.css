@@ -17,22 +17,21 @@
 				border-radius:15px 15px 0px 0px;
 				padding:3px 5px;
 				font-size:150%;
-				height:105px;
+				height:100px;
 				width:60px;
 				display:flex;
 				justify-content:center;
 				align-items:start;
 				transform:translate(0%,0%);
+				border-bottom:0px !important;
 			}
 			
 			& .orders{
 				display:flex;
-				background-color:#000;
-				transform:translate(20px, -10px);
+				transform:translate(20px, -8px);
 				flex-direction:column;
 				border-radius:15px;
 				width:fit-content;
-				padding:5px;
 				gap:5px;
 				& .order{
 					background-color:#fff;

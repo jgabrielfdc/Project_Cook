@@ -28,7 +28,7 @@ const grill = new Grill(getElement('grelha'), 3);
 const plates = new Plate(getElement('plates'));
 const breadTop = new Bread(getElement('bread_top'));
 const breadBase = new Bread(getElement('bread_base'));
-const meat = new Meat(getElement('meat'), 'meat', 'assets/img/carne_crua.png', 5);
+const meat = new Meat(getElement('meat'), 'meat', '../assets/img/carne_crua.png', 5);
 const customer = new Customer(products, faces, skins);
 const soda=new Soda(customer);
 
