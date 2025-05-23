@@ -1,6 +1,6 @@
 class Plate {
 	constructor(plateGroup) {
-		this.plateGroup = Array.from(plateGroup.children);
+		this.plateGroup = toArray(plateGroup.children);
 	}
 
 	getFreePlate() {
@@ -29,7 +29,7 @@ class Plate {
 	serveFood(plates,customers,customerObject){
 		plates.onclick=(event)=>{
 			if(event.target.className!='plate__item' && event.target.className!='pao_base'){
-				let orders=Array.from(customers.getElementsByTagName('img'))
+				let orders=toArray(customers.getElementsByTagName('img'))
 				if(orders.find(item=>item.id==event.target.id)){
 					let product=orders.find(item=>item.id==event.target.id);
 					let customer=product.parentNode.parentNode;

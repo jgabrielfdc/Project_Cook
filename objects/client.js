@@ -6,13 +6,11 @@ class Customer{
 		this.orders=[];
 	}
 
-
 }
 
-// X
 Customer.prototype.generateOrder=function(){
 	this.orders=[];
-	let orderAmount=Math.round(Math.random()*2)+1;
+	let orderAmount=randomNumber(2);
 
 	for(let i=0; i<orderAmount;i++){
 		let randomProduct=Math.floor(Math.random()*this.products.length);
@@ -24,7 +22,6 @@ Customer.prototype.generateOrder=function(){
 
 }
 
-// X
 Customer.prototype.generateCustomerAttributes=function(){
 	randomSkin=Math.floor((Math.random()*this.skins.length));
 	randomFace=Math.floor((Math.random()*this.faces.length));

@@ -1,3 +1,4 @@
+
 // # Variáveis Iniciais
 const products = [
 	'burguer',
@@ -17,11 +18,6 @@ let randomFace;
 let randomTimer;
 let customerGenerator = undefined;
 let deskSize = 0;
-
-// # Recupera elementos por ID
-function getElement(id) {
-	return document.getElementById(id);
-}
 
 // # Instancia os objetos
 const grill = new Grill(getElement('grelha'), 3);
