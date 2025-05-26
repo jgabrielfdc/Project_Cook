@@ -32,7 +32,7 @@ class Bread {
 		}
 	}
 
-	addBreadTop(findStep) {
+	addBreadTop(findStep,string) {
 		if (!this.source || typeof findStep !== 'function') {
 			console.error('Fonte do pão ou função findStep inválida.');
 			return;
@@ -40,13 +40,38 @@ class Bread {
 
 		this.source.onmouseup= () => {
 			try {
-				const step = findStep('burguer_step1');
+				console.log(string)
+				console.log(findStep)
+				const step = findStep(string);
 				if (!step) {
 					throw new Error('Precisa de um Hamburguer');
 				}
-				step.id = 'burguer';
-				step.src = '../assets/img/burguer.png';
-				step.alt = 'Hamburguer Pronto';
+				console.log(step)
+				if(step.id=='burguer_step'){
+					step.id = 'burguer';
+					step.src = '../assets/img/burguer.png';
+					step.alt = 'Burguer';
+				
+				}
+
+				if(step.id=='hamburguer_step'){
+					step.id = 'hamburguer';
+					step.src = '../assets/img/hamburguer.png';
+					step.alt = 'Hamburguer';
+				
+				}
+
+				if(step.id=='cheeseburguer_step'){
+					step.id = 'cheeseburguer';
+					step.src = '../assets/img/cheeseburguer.png';
+					step.alt = 'Chesseburguer';
+				
+				}else{
+					console.log(step.id)
+					console.log(step)
+					throw new Error('Precisa de Carne');
+				}
+								
 			} catch (erro) {
 				console.error('Erro ao adicionar topo do pão:', erro.message);
 			}

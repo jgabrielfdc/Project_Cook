@@ -14,7 +14,6 @@ class Plate {
 				.filter(Boolean); // Garante que não haja `undefined`
 
 			const plate = firstChildren.find(child => child.id === target);
-
 			if (!plate) {
 				throw new Error('Sem Fase');
 			}

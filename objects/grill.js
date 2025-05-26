@@ -18,25 +18,24 @@ Grill.prototype.cookMeat = function (meatItem) {
 
 Grill.prototype.serveMeat = function (getPlate) {
 	this.grillElement.onmouseup = () => {
-		const grillItems = toArray(this.grillElement.children);
+			const grillItems = toArray(this.grillElement.children);
+			grillItems.forEach(item => {
+				item.onmouseup = () => {
+					if(item.id==='cooked_meat'){
+						const breadPlate = getPlate('bread_base');
 
-		grillItems.forEach((item) => {
-			item.onmouseup = () => {
-				if (item.id === 'cooked_meat') {
-					const breadPlate = getPlate('bread_base');
+						if (breadPlate) {
+							item.remove();
 
-					if (breadPlate) {
-						item.remove();
+							breadPlate.id = 'burguer_step';
+							breadPlate.src = '../assets/img/burguer_step.png';
 
-						breadPlate.id = 'burguer_step1';
-						breadPlate.src = '../assets/img/burguer_step1.png';
-
-						this.updateGrillVisual();
+							this.updateGrillVisual();
+						}
 					}
 				}
 			});
-		});
-	});
+		}
 };
 
 Grill.prototype.updateGrillVisual = function () {

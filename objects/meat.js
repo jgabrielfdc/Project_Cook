@@ -1,8 +1,9 @@
 class Meat {
-	constructor(meatSource, meatID, meatTexture, meatCookingTime) {
+	meatID='meat';
+	meatTexture='../assets/img/carne_crua.png';
+	
+	constructor(meatSource, meatCookingTime) {
 		this.meatSource = meatSource;
-		this.meatID = meatID;
-		this.meatTexture = meatTexture;
 		this.meatCookingTime = meatCookingTime;
 	}
 
@@ -10,8 +11,8 @@ class Meat {
 		const meatItem = document.createElement('img');
 		meatItem.alt = `Meat ${this.meatID}`;
 		meatItem.dataset.id = this.meatID;
-		meatItem.src = this.meatTexture || '../assets/img/carne_crua.png';
-		meatItem.classList.add('meat-item'); // Boa prática para estilização futura
+		meatItem.src = this.meatTexture;
+		meatItem.classList.add('meat-item'); 
 		return meatItem;
 	}
 

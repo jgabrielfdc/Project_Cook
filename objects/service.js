@@ -20,25 +20,34 @@ let customerGenerator = undefined;
 let deskSize = 0;
 
 // # Instancia os objetos
+const customer = new Customer(products, faces, skins);
 const grill = new Grill(getElement('grelha'), 3);
 const plates = new Plate(getElement('plates'));
+
 const breadTop = new Bread(getElement('bread_top'));
 const breadBase = new Bread(getElement('bread_base'));
-const meat = new Meat(getElement('meat'), 'meat', '../assets/img/carne_crua.png', 5);
-const customer = new Customer(products, faces, skins);
 const soda=new Soda(customer);
+const meat = new Meat(getElement('meat'), 5);
+const lettuce=new Lettuce();
 
+const burguer=new Burguer();
+const hamburguer=new Hamburguer();
+const cheeseburguer=new Cheeseburguer();
+
+// # Geração de Clientes
 customer.createCustomer();
 
 // # Inicia o placar
 let pontos = 0;
 getElement('pontuacao').innerText = 'Pontos: ' + pontos;
 
-// # Associa eventos
+// # Adiciona carne a grelha
 meat.addGrillMeat(grill);
 
-// # Servir carne
-breadTop.addBreadTop(() => plates.getPlate('burguer_step1'));
+// # Montar Sanduiche
 breadBase.addBreadBase(() => plates.getFreePlate());
 grill.serveMeat(() => plates.getPlate('bread_base'));
+lettuce.addLettuce(plates);
+breadTop.addBreadTop(() => plates.getFreePlate())
+
 plates.serveFood(getElement('plates'),getElement('clientes'),customer)
