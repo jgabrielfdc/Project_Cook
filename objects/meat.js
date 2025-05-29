@@ -1,6 +1,6 @@
 class Meat {
 	meatID='meat';
-	meatTexture='../assets/img/carne_crua.png';
+	meatTexture='assets/img/carne_crua.png';
 	
 	constructor(meatSource, meatCookingTime) {
 		this.meatSource = meatSource;
