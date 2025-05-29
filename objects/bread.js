@@ -32,43 +32,38 @@ class Bread {
 		}
 	}
 
-	addBreadTop(findStep,string) {
-		if (!this.source || typeof findStep !== 'function') {
+	addBreadTop(pratos) {
+		if (!this.source || typeof pratos !== 'function') {
 			console.error('Fonte do pão ou função findStep inválida.');
 			return;
 		}
 
 		this.source.onmouseup= () => {
 			try {
-				console.log(string)
-				console.log(findStep)
-				const step = findStep(string);
-				if (!step) {
+				let prato=pratos();
+				if (!prato) {
 					throw new Error('Precisa de um Hamburguer');
 				}
-				console.log(step)
-				if(step.id=='burguer_step'){
-					step.id = 'burguer';
-					step.src = '../assets/img/burguer.png';
-					step.alt = 'Burguer';
+				if(prato.id=='burguer_step'){
+					prato.id = 'burguer';
+					prato.src = '../assets/img/burguer.png';
+					prato.alt = 'Burguer';
 				
 				}
 
-				if(step.id=='hamburguer_step'){
-					step.id = 'hamburguer';
-					step.src = '../assets/img/hamburguer.png';
-					step.alt = 'Hamburguer';
+				if(prato.id=='hamburguer_step'){
+					prato.id = 'hamburguer';
+					prato.src = '../assets/img/hamburguer.png';
+					prato.alt = 'Hamburguer';
 				
 				}
 
-				if(step.id=='cheeseburguer_step'){
-					step.id = 'cheeseburguer';
-					step.src = '../assets/img/cheeseburguer.png';
-					step.alt = 'Chesseburguer';
+				if(prato.id=='cheeseburguer_step'){
+					prato.id = 'cheeseburguer';
+					prato.src = '../assets/img/cheeseburguer.png';
+					prato.alt = 'Chesseburguer';
 				
 				}else{
-					console.log(step.id)
-					console.log(step)
 					throw new Error('Precisa de Carne');
 				}
 								

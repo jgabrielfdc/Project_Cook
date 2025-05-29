@@ -7,6 +7,17 @@ class Plate {
 		return this.plateGroup.find(plate => plate.children.length === 0);
 	}
 
+	getStep(){
+
+		return this.plateGroup.find(plate => (plate.children.length === 1 && plate.children[0].id!='burguer' && plate.children[0].id!='hamburguer' && plate.children[0].id!='cheeseburguer')).children[0];
+				
+	}
+
+	//jogar Fora
+	trashItem(){
+
+	}
+
 	getPlate(target) {
 		try {
 			const firstChildren = this.plateGroup

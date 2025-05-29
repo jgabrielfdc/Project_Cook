@@ -1,9 +1,9 @@
 class Lettuce{
-	hamburguerStep='../assets/img/hamburguer_step.png';
-
 	addLettuce(plates){
 		getElement('lettuce').onmouseup=function(){
-			plates.getPlate('burguer_step').src='../assets/img/hamburguer_step.png';
+			let hamburguer_step=plates.getPlate('burguer_step');
+			hamburguer_step.src='../assets/img/hamburguer_step.png';
+			hamburguer_step.id='hamburguer_step';
 		}
 	}
 }

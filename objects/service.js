@@ -29,10 +29,7 @@ const breadBase = new Bread(getElement('bread_base'));
 const soda=new Soda(customer);
 const meat = new Meat(getElement('meat'), 5);
 const lettuce=new Lettuce();
-
-const burguer=new Burguer();
-const hamburguer=new Hamburguer();
-const cheeseburguer=new Cheeseburguer();
+const cheese=new Cheese();
 
 // # Geração de Clientes
 customer.createCustomer();
@@ -45,9 +42,14 @@ getElement('pontuacao').innerText = 'Pontos: ' + pontos;
 meat.addGrillMeat(grill);
 
 // # Montar Sanduiche
+
+breadTop.addBreadTop(()=>plates.getStep());
+
 breadBase.addBreadBase(() => plates.getFreePlate());
+
 grill.serveMeat(() => plates.getPlate('bread_base'));
+
 lettuce.addLettuce(plates);
-breadTop.addBreadTop(() => plates.getFreePlate())
+cheese.addCheese(plates);
 
 plates.serveFood(getElement('plates'),getElement('clientes'),customer)
