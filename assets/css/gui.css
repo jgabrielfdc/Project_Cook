@@ -1,0 +1,68 @@
+/* Modal Overlay */
+.modal__overlay {
+  display: none; /* Hidden by default */
+  position: absolute; /* Stay in place */
+  z-index: 1000; /* Sit on top */
+  left: 0;
+  top: -70px;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0, 0, 0, 0.7); /* Black w/ opacity */
+  display: flex; /* Use flexbox to center content */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+}
+
+/* Modal Content */
+.modal__content {
+  background-color: #fefefe;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  position: relative; /* Needed for absolute positioning of close button */
+  max-width: 80%; /* Adjust as needed */
+  max-height: 80%; /* Adjust as needed */
+  overflow-y: auto; /* Enable scrolling for modal content if it overflows */
+}
+
+/* Close Button */
+.modal__close-btn {
+  color: #aaa;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.modal__close-btn:hover,
+.modal__close-btn:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Make sure your existing .menu__container styles are still applied for the internal layout */
+.menu__container {
+    /* Example: Add some default padding/margin for the menu options */
+    padding: 20px;
+}
+
+.menu__option {
+    /* Example: Styling for your menu options */
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    background-color: #eee;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    text-align: center;
+}
+
+.menu__option:hover {
+    background-color: #e0e0e0;
+}

@@ -4,42 +4,43 @@
   <meta charset="UTF-8">
   <title>Project Cook</title>
 
-  <!-- Estilos -->
   <link rel="stylesheet" href="assets/css/game.css">
+  <link rel="stylesheet" href="assets/css/gui.css">
   <link rel="stylesheet" href="assets/css/kitchen.css">
   <link rel="stylesheet" href="assets/css/clients.css">
-</head>
+ </head>
 
 <body>
   <div class="game__container">
     <div class="game__content">
-      
-      <!-- Clientes -->
+
+      <div id="menuModal" class="modal__overlay">
+        <div id='menu' class='menu__container clearfix modal__content'>
+          <div class='menu__option' onclick='closeModal()'>Voltar ao Jogo</div>
+          <div class='menu__option' onclick='feedback()'>Configurações</div>
+          <div class='menu__option'>Opção 3</div>
+	</div>
+      </div>
+
       <section class="client__container">
         <div class="client__content" id="clientes"></div>
       </section>
 
-      <!-- Cozinha -->
       <section class="kitchen__container">
         <div class="kitchen__content">
 
-          <!-- Mesa -->
           <div class="kitchen__table">
 
-            <!-- Parte de cima da mesa -->
             <div class="table__top">
 
-              <!-- Linha 1: grelha e pratos -->
               <div class="row">
-                
-                <!-- Grelha -->
+
                 <div class="grill__container">
                   <div class="grill__content" id="topo__grelha">
                     <div class="grill__top" id="grelha"></div>
                   </div>
                 </div>
 
-                <!-- Pratos -->
                 <div class="plate__container">
                   <div class="plate__content" id="plates">
                     <div class="plate__item"></div>
@@ -49,7 +50,6 @@
                 </div>
               </div>
 
-              <!-- Linha 2: ingredientes -->
               <div class="row">
                 <div class="ingredients__container">
                   <div class="ingredients__content">
@@ -64,22 +64,21 @@
 
             </div>
 
-            <!-- Parte de baixo da mesa -->
             <div class="table__bottom">
               <div id="pontuacao">Pontos</div>
+              <div id=''><span>E</span></div>
             </div>
           </div>
 
-          <!-- Área abaixo da mesa -->
           <div class="kitchen__under-table">
             <div class="under-table__container">
               <div class="row">
-                	<div class="row__slot" style="background-image: url('assets/img/icons/refrigerante_cola_icone.png');" id='refrigerante_cola' onclick='soda.serveSoda(event)'></div>
-			<div class="row__slot" style="background-image: url('assets/img/icons/refrigerante_uva_icone.png');" id='refrigerante_uva' onclick='soda.serveSoda(event)'></div>
+                <div class="row__slot" style="background-image: url('assets/img/icons/refrigerante_cola_icone.png');" id='refrigerante_cola' onclick='soda.serveSoda(event)'></div>
+                <div class="row__slot" style="background-image: url('assets/img/icons/refrigerante_uva_icone.png');" id='refrigerante_uva' onclick='soda.serveSoda(event)'></div>
               </div>
-		<div class="row">
-                	<div class="row__slot" style="background-image: url('assets/img/icons/refrigerante_lima_icone.png');" id='refrigerante_lima' onclick='soda.serveSoda(event)'></div>
-			<div class="row__slot"></div>
+              <div class="row">
+                <div class="row__slot" style="background-image: url('assets/img/icons/refrigerante_lima_icone.png');" id='refrigerante_lima' onclick='soda.serveSoda(event)'></div>
+                <div class="row__slot"></div>
               </div>
             </div>
           </div>
@@ -89,8 +88,7 @@
     </div>
   </div>
 
-  <!-- Scripts -->
-
+  <script src='objects/gui.js'></script>
   <script src='objects/tools.js'></script>
   <script src='objects/cheese.js'></script>
   <script src='objects/lettuce.js'></script>

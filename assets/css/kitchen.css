@@ -125,12 +125,15 @@
 	background-color: #888;
 	height: 40px;
 	box-shadow: 0 40px 50px #000;
-	width: 28.27em;
+	width: 450px;
+	display:flex;
+	justify-content:space-between;
 }
 
 /* Área sob a mesa */
 .kitchen__container .kitchen__under-table {
-	width: 100%;
+	max-width:452px;
+	width: 450px;
 	max-height: 300px;
 	min-height: 220px;
 	background-color: #666;
