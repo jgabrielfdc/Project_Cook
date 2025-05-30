@@ -1,28 +1,29 @@
 .kitchen__container {
 	overflow: hidden;
+	position:relative;
 	margin: 0;
-	height: 65%;
-	width: 100vw;
+	width: 100%;
 	display: flex;
 	flex-direction: column;
+	align-self: flex-end;
 }
 
 /* Conteúdo principal */
 .kitchen__container .kitchen__content {
-	width: 450px;
+	width: 100%;
 }
 
 /* Mesa principal */
 .kitchen__container .kitchen__table {
-	width: 100vw;
+	width: 100%;
 }
 
 /* Parte superior da mesa */
 .kitchen__table .table__top {
 	padding: 0 15px 0 0;
 	background-color: #AAA;
-	height: 200px;
-	width:437px;
+	height: 40%;
+	width:100%;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -34,7 +35,7 @@
 	width: 100%;
 	padding: 10px 6px;
 	display: flex;
-	justify-content: space-between;
+	justify-content: space-around;
 }
 
 /* Container de pratos */
@@ -43,7 +44,6 @@
 }
 
 .plate__container .plate__content {
-	transform: translate(-10%, 10%);
 	background-color: #556642;
 	width: 100%;
 	display: flex;
@@ -67,10 +67,9 @@
 
 /* Container da grelha */
 .row .grill__container {
-	width: 40%;
+	width: 188px;
 	display: flex;
 	flex-direction: column;
-	min-height: 50px;
 }
 
 .grill__container .grill__content {
@@ -83,11 +82,8 @@
 }
 
 .grill__content .grill__top {
-	background-repeat: repeat-x;
-	background-size: contain;
-	height: 80%;
-	width: 100%;
-	min-height: 64px;
+	width:100%;
+	min-height:65px;
 	display: flex;
 	justify-content: center;
 	align-items: flex-end;
@@ -123,19 +119,17 @@
 /* Parte inferior da mesa */
 .kitchen__table .table__bottom {
 	background-color: #888;
-	height: 40px;
+	height: 5%;
 	box-shadow: 0 40px 50px #000;
-	width: 450px;
+	width: 100%;
 	display:flex;
 	justify-content:space-between;
 }
 
 /* Área sob a mesa */
 .kitchen__container .kitchen__under-table {
-	max-width:452px;
-	width: 450px;
-	max-height: 300px;
-	min-height: 220px;
+	width: 100%;
+	height:60%;
 	background-color: #666;
 	display: flex;
 	justify-content: center;
@@ -173,10 +167,14 @@
 
 /* Imagens gerais */
 .kitchen__container img {
+	width:90%;
 	transform: translate(0, -20%);
-	width: 90%;
 	text-align: center;
 	filter: drop-shadow(0 2px 1px);
-	max-height: 50px;
-	max-width: 50px;
+}
+
+
+img.meat-item{
+	width:28%;
+	height:65%;
 }

@@ -7,14 +7,14 @@ class Plate {
 		return this.plateGroup.find(plate => plate.children.length === 0);
 	}
 
-	getStep(){
+	getStep() {
 
-		return this.plateGroup.find(plate => (plate.children.length === 1 && plate.children[0].id!='burguer' && plate.children[0].id!='hamburguer' && plate.children[0].id!='cheeseburguer')).children[0];
-				
+		return this.plateGroup.find(plate => (plate.children.length === 1 && plate.children[0].id != 'burguer' && plate.children[0].id != 'hamburguer' && plate.children[0].id != 'cheeseburguer')).children[0];
+
 	}
 
 	//jogar Fora
-	trashItem(){
+	trashItem() {
 
 	}
 
@@ -35,20 +35,20 @@ class Plate {
 			return null;
 		}
 	}
-	
-	serveFood(plates,customers,customerObject){
-		plates.onclick=(event)=>{
-			if(event.target.className!='plate__item' && event.target.className!='pao_base'){
-				let orders=toArray(customers.getElementsByTagName('img'))
-				if(orders.find(item=>item.id==event.target.id)){
-					let product=orders.find(item=>item.id==event.target.id);
-					let customer=product.parentNode.parentNode;
+
+	serveFood(plates, customers, customerObject) {
+		plates.onclick = (event) => {
+			if (event.target.className != 'plate__item' && event.target.className != 'pao_base') {
+				let orders = toArray(customers.getElementsByTagName('img'))
+				if (orders.find(item => item.id == event.target.id)) {
+					let product = orders.find(item => item.id == event.target.id);
+					let customer = product.parentNode.parentNode;
 					product.remove();
-					event.target.remove();	
+					event.target.remove();
 					customerObject.verifyOrders(customer);
 				}
 			}
 		}
 	}
-		
+
 }

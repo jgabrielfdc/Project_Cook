@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="UTF-8">
   <title>Project Cook</title>
@@ -8,7 +9,7 @@
   <link rel="stylesheet" href="assets/css/gui.css">
   <link rel="stylesheet" href="assets/css/kitchen.css">
   <link rel="stylesheet" href="assets/css/clients.css">
- </head>
+</head>
 
 <body>
   <div class="game__container">
@@ -19,8 +20,19 @@
           <div class='menu__option' onclick='closeModal()'>Voltar ao Jogo</div>
           <div class='menu__option' onclick='feedback()'>Configurações</div>
           <div class='menu__option'>Opção 3</div>
-	</div>
+        </div>
       </div>
+
+      <div id="recipesModal" class="modal__overlay">
+        <div id='recipes' class='menu__container clearfix modal__content'>
+          <img class='recipe-book' id='recipe-book' onsrc="console.log('alterado')">
+          <div class="arrows">
+            <button id="RightA" onclick="pageBackward()">&#8656;</button>
+            <button id="LeftA" onclick="pageForward()">&#8658;</button>
+          </div>
+        </div>
+      </div>
+
 
       <section class="client__container">
         <div class="client__content" id="clientes"></div>
@@ -33,7 +45,7 @@
 
             <div class="table__top">
 
-              <div class="row">
+              <div class="row" style="justify-content: space-around;">
 
                 <div class="grill__container">
                   <div class="grill__content" id="topo__grelha">
@@ -53,11 +65,16 @@
               <div class="row">
                 <div class="ingredients__container">
                   <div class="ingredients__content">
-                    <div class="ingredient__platter" id="bread_base" style="background-image: url('assets/img/pao_base.png');"></div>
-                    <div class="ingredient__platter" id="bread_top" style="background-image: url('assets/img/pao_topo.png');"></div>
-                    <div class="ingredient__platter" id="meat" style="background-image: url('assets/img/icons/carne_crua_icone.png');"></div>
-                    <div class="ingredient__platter" id="lettuce" style="background-image: url('assets/img/lettuce.png');"></div>
-                    <div class="ingredient__platter" id="cheese" style="background-image: url('assets/img/cheese.png');"></div>
+                    <div class="ingredient__platter" id="bread_base"
+                      style="background-image: url('assets/img/pao_base.png');"></div>
+                    <div class="ingredient__platter" id="bread_top"
+                      style="background-image: url('assets/img/pao_topo.png');"></div>
+                    <div class="ingredient__platter" id="meat"
+                      style="background-image: url('assets/img/icons/carne_crua_icone.png');"></div>
+                    <div class="ingredient__platter" id="lettuce"
+                      style="background-image: url('assets/img/lettuce.png');"></div>
+                    <div class="ingredient__platter" id="cheese"
+                      style="background-image: url('assets/img/cheese.png');"></div>
                   </div>
                 </div>
               </div>
@@ -66,18 +83,24 @@
 
             <div class="table__bottom">
               <div id="pontuacao">Pontos</div>
-              <div id=''><span>E</span></div>
+              <div id='menus'>
+                <span>Mercado</span>
+                <span onclick="openModal(getElement('recipesModal'))">Livro de Receitas</span>
+              </div>
             </div>
           </div>
 
           <div class="kitchen__under-table">
             <div class="under-table__container">
               <div class="row">
-                <div class="row__slot" style="background-image: url('assets/img/icons/refrigerante_cola_icone.png');" id='refrigerante_cola' onclick='soda.serveSoda(event)'></div>
-                <div class="row__slot" style="background-image: url('assets/img/icons/refrigerante_uva_icone.png');" id='refrigerante_uva' onclick='soda.serveSoda(event)'></div>
+                <div class="row__slot" style="background-image: url('assets/img/icons/refrigerante_cola_icone.png');"
+                  id='refrigerante_cola' onclick='soda.serveSoda(event)'></div>
+                <div class="row__slot" style="background-image: url('assets/img/icons/refrigerante_uva_icone.png');"
+                  id='refrigerante_uva' onclick='soda.serveSoda(event)'></div>
               </div>
               <div class="row">
-                <div class="row__slot" style="background-image: url('assets/img/icons/refrigerante_lima_icone.png');" id='refrigerante_lima' onclick='soda.serveSoda(event)'></div>
+                <div class="row__slot" style="background-image: url('assets/img/icons/refrigerante_lima_icone.png');"
+                  id='refrigerante_lima' onclick='soda.serveSoda(event)'></div>
                 <div class="row__slot"></div>
               </div>
             </div>
@@ -88,13 +111,10 @@
     </div>
   </div>
 
-  <script src='objects/gui.js'></script>
   <script src='objects/tools.js'></script>
+  <script src='objects/gui.js'></script>
   <script src='objects/cheese.js'></script>
   <script src='objects/lettuce.js'></script>
-  <script src='objects/burguer.js'></script>
-  <script src='objects/hamburguer.js'></script>
-  <script src='objects/cheeseburguer.js'></script>
   <script src='objects/soda.js'></script>
   <script src="objects/bread.js"></script>
   <script src="objects/meat.js"></script>
@@ -103,4 +123,5 @@
   <script src="objects/client.js"></script>
   <script src="objects/service.js"></script>
 </body>
+
 </html>
