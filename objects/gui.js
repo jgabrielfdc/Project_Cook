@@ -1,14 +1,11 @@
 const pages = ['capa', 'tutorial_carne', 'receita_burguer', 'receita_hamburguer', 'receita_cheeseburguer'];
+document.addEventListener('DOMContentLoaded', () => {
 let numPg = 0;
 function openModal(element) {
     element.style.display = 'flex'; // Use flex to center
 }
 function closeModal(element) {
     element.style.display = 'none';
-}
-
-function feedback() {
-getElement('menu').innerHTML = "<p 'style=color:#F00;'>Não temos orçamento pra isso</p>"+`<p class='menu__option' onclick='${closeModal(getElement('menuModal'))}'>Voltar</p>`
 }
 
 function pageForward(){
@@ -36,7 +33,7 @@ function pageBackward(){
 window.onload = () => {
     getElement('recipe-book').src = `assets/img/recipe_book/${pages[numPg]}.png`;
 }
-document.addEventListener('DOMContentLoaded', () => {
+
     const closeButton = document.querySelector('.modal__close-btn');
     // Function to open the modal
     window.onkeydown = (event) => {

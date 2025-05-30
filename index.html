@@ -3,6 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <title>Project Cook</title>
 
   <link rel="stylesheet" href="assets/css/game.css">
@@ -18,16 +19,16 @@
       <div id="menuModal" class="modal__overlay">
         <div id='menu' class='menu__container clearfix modal__content'>
           <div class='menu__option' onclick='closeModal()'>Voltar ao Jogo</div>
-          <div class='menu__option' onclick='feedback()'>Configurações</div>
-          <div class='menu__option'>Opção 3</div>
+          <div class='menu__option' onclick='alert("Até parece")'>Configurações</div>
         </div>
       </div>
 
       <div id="recipesModal" class="modal__overlay">
         <div id='recipes' class='menu__container clearfix modal__content'>
           <img class='recipe-book' id='recipe-book' onsrc="console.log('alterado')">
-          <div class="arrows"> 
+          <div class="arrows">
             <button id="RightA" onclick="pageBackward()">&#8656;</button>
+	          <button onclick='closeModal(getElement("recipesModal"))'> Fechar </button>
             <button id="LeftA" onclick="pageForward()">&#8658;</button>
           </div>
         </div>
