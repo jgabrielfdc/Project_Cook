@@ -21,7 +21,7 @@ function pageForward(){
     }
 }
 function pageBackward(){
-    if(pages[numPg-1]!==undefined){
+    if(pages[numPg-2]!==undefined){
         numPg--;
         getElement('recipe-book').src = `assets/img/recipe_book/${pages[numPg]}.png`;
         getElement('LeftA').style.display='flex';
