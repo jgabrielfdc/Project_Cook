@@ -7,27 +7,27 @@ class Plate {
 		return this.plateGroup.find(plate => plate.children.length === 0);
 	}
 
-	getStep(){
-
-		return this.plateGroup.find(plate => (plate.children.length === 1 && plate.children[0].id!='burguer' && plate.children[0].id!='hamburguer' && plate.children[0].id!='cheeseburguer')).children[0];
-				
+	getStep() {
+		return this.plateGroup.find(plate => {
+			if (plate.children.length !== 1) return false;
+			const id = plate.children[0].id;
+			return !['burguer', 'hamburguer', 'cheeseburguer'].includes(id);
+		})?.children[0] || null;
 	}
 
-	//jogar Fora
-	trashItem(){
-
+	// Jogar fora (a ser implementado futuramente)
+	trashItem() {
+		// Placeholder para descarte de itens
 	}
 
 	getPlate(target) {
 		try {
 			const firstChildren = this.plateGroup
-				.map(item => item.children[0])
-				.filter(Boolean); // Garante que não haja `undefined`
+				.map(plate => plate.children[0])
+				.filter(Boolean);
 
 			const plate = firstChildren.find(child => child.id === target);
-			if (!plate) {
-				throw new Error('Sem Fase');
-			}
+			if (!plate) throw new Error('Sem Fase');
 
 			return plate;
 		} catch (erro) {
@@ -35,20 +35,23 @@ class Plate {
 			return null;
 		}
 	}
-	
-	serveFood(plates,customers,customerObject){
-		plates.onclick=(event)=>{
-			if(event.target.className!='plate__item' && event.target.className!='pao_base'){
-				let orders=toArray(customers.getElementsByTagName('img'))
-				if(orders.find(item=>item.id==event.target.id)){
-					let product=orders.find(item=>item.id==event.target.id);
-					let customer=product.parentNode.parentNode;
+
+	serveFood(plates, customers, customerObject) {
+		plates.onclick = (event) => {
+			const target = event.target;
+			const validClasses = ['plate__item', 'pao_base'];
+
+			if (!validClasses.includes(target.className)) {
+				const orders = toArray(customers.getElementsByTagName('img'));
+				const product = orders.find(item => item.id === target.id);
+
+				if (product) {
+					const customer = product.closest('.cliente') || product.parentNode.parentNode;
 					product.remove();
-					event.target.remove();	
+					target.remove();
 					customerObject.verifyOrders(customer);
 				}
 			}
-		}
+		};
 	}
-		
 }

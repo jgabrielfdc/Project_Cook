@@ -1,7 +1,7 @@
 class Meat {
-	meatID='meat';
-	meatTexture='assets/img/carne_crua.png';
-	
+	meatID = 'meat';
+	meatTexture = 'assets/img/carne_crua.png';
+
 	constructor(meatSource, meatCookingTime) {
 		this.meatSource = meatSource;
 		this.meatCookingTime = meatCookingTime;
@@ -12,7 +12,7 @@ class Meat {
 		meatItem.alt = `Meat ${this.meatID}`;
 		meatItem.dataset.id = this.meatID;
 		meatItem.src = this.meatTexture;
-		meatItem.classList.add('meat-item'); 
+		meatItem.classList.add('meat-item');
 		return meatItem;
 	}
 

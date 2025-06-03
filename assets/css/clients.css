@@ -1,6 +1,11 @@
 .client__container{
+<<<<<<< HEAD
 	width:450px;
 	height:20em;
+=======
+	width:100%;
+	height:50%;
+>>>>>>> 65e32541580ce370f571c580b8f58f80f03339cd
 	margin:0px;
 	padding:0px;
 
@@ -11,14 +16,14 @@
 		justify-content:space-evenly;
 		
 		& .cliente{
-			width:65px;
+			width:5em;
 			
 			& .face{
 				border-radius:15px 15px 0px 0px;
 				padding:3px 5px;
 				font-size:150%;
-				height:100px;
-				width:60px;
+				height:5em;
+				width:100%;
 				display:flex;
 				justify-content:center;
 				align-items:start;

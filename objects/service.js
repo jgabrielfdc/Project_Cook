@@ -1,4 +1,3 @@
-
 // # Variáveis Iniciais
 const products = [
 	'burguer',
@@ -10,7 +9,6 @@ const products = [
 ];
 
 const skins = ['#F7F342', '#568923', '#F93A52', '#68D930', '#43EC22'];
-
 const faces = ['O_O', '0_0', '-_-', '=_=', 'O-O', '*-*', '*_*', '1_1'];
 
 let randomSkin;
@@ -26,30 +24,27 @@ const plates = new Plate(getElement('plates'));
 
 const breadTop = new Bread(getElement('bread_top'));
 const breadBase = new Bread(getElement('bread_base'));
-const soda=new Soda(customer);
+const soda = new Soda(customer);
 const meat = new Meat(getElement('meat'), 5);
-const lettuce=new Lettuce();
-const cheese=new Cheese();
+const lettuce = new Lettuce();
+const cheese = new Cheese();
 
 // # Geração de Clientes
 customer.createCustomer();
 
 // # Inicia o placar
 let pontos = 0;
-getElement('pontuacao').innerText = 'Pontos: ' + pontos;
+getElement('pontuacao').innerText = `Pontos: ${pontos}`;
 
-// # Adiciona carne a grelha
+// # Adiciona carne à grelha
 meat.addGrillMeat(grill);
 
-// # Montar Sanduiche
-
-breadTop.addBreadTop(()=>plates.getStep());
-
+// # Montar Sanduíche
+breadTop.addBreadTop(() => plates.getStep());
 breadBase.addBreadBase(() => plates.getFreePlate());
-
 grill.serveMeat(() => plates.getPlate('bread_base'));
 
 lettuce.addLettuce(plates);
 cheese.addCheese(plates);
 
-plates.serveFood(getElement('plates'),getElement('clientes'),customer)
+plates.serveFood(getElement('plates'), getElement('clientes'), customer);

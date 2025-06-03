@@ -1,15 +1,16 @@
-class Soda{
-	constructor(customers){
-		this.customers=customers
+class Soda {
+	constructor(customers) {
+		this.customers = customers;
 	}
-	serveSoda(event){
-		let orders=getElement('clientes').getElementsByTagName('img');
-		orders=Array.from(orders)
-		if(orders.find(item=>item.id==event.target.id)){
-			let order=orders.find(item=>item.id==event.target.id)
-			let customer=order.parentNode.parentNode;
+
+	serveSoda(event) {
+		const orders = Array.from(getElement('clientes').getElementsByTagName('img'));
+		const order = orders.find(img => img.id === event.target.id);
+
+		if (order) {
+			const customer = order.closest('.cliente'); // Usa o método mais semântico e seguro
 			order.remove();
-			this.customers.verifyOrders(customer)
+			this.customers.verifyOrders(customer);
 		}
 	}
 }
