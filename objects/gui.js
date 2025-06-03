@@ -65,7 +65,6 @@ window.onload = () => {
 
     closeModal(getElement('recipesModal'));
     closeModal(getElement('menuModal'));
-}
 
 /* game-performance-monitor.js (cole no console ou inclua no seu HTML)
 
