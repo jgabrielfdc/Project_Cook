@@ -16,7 +16,6 @@
 
 /* Modal Content */
 .modal__content {
-  background-color: #fefefe;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
@@ -40,6 +39,11 @@
   border: none;
   padding: 0;
 }
+
+.modal__content img{
+  width:100%;
+}
+
 
 .modal__close-btn:hover,
 .modal__close-btn:focus {
@@ -90,6 +94,7 @@
 }
 
 .arrows{
+  transform:translate(2%, -150%);
   width:99%;
   display: flex;
   justify-content: space-between;
@@ -105,4 +110,14 @@
     color:transparent;
     background:transparent;
     border:transparent;
+}
+
+.close__button{
+      font-size:large;
+      color:#CCC;
+      background-color:transparent; 
+      border-color:transparent; 
+}
+.close__button:hover{
+  transform:scale(140%);
 }

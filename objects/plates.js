@@ -1,7 +1,6 @@
 class Plate {
 	constructor(plateGroup) {
 		this.plateGroup = toArray(plateGroup.children);
-		console.log(coins)
 	}
 
 	getFreePlate() {

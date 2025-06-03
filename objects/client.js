@@ -1,10 +1,10 @@
 class Customer {
-	finished=0;
 	constructor(products, faces, skins) {
 		this.products = products;
 		this.faces = faces;
 		this.skins = skins;
 		this.orders = [];
+		this.finished=0;
 	}
 
 }
@@ -99,7 +99,7 @@ Customer.prototype.createCustomer = function () {
 Customer.prototype.verifyOrders = function (customer) {
 	let orderAmount = customer.children[0].children.length;
 	if (orderAmount < 1) {
-		finished+=1;
+		this.finished+=1;
 		getElement('atendido').innerText=this.finished;
 		customer.remove();
 	}

@@ -10,6 +10,7 @@ class Soda {
 		if (order) {
 			const customer = order.closest('.cliente'); // Usa o método mais semântico e seguro
 			order.remove();
+			coins.updateCoins(order.id);
 			this.customers.verifyOrders(customer);
 		}
 	}

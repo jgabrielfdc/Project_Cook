@@ -18,7 +18,7 @@ let customerGenerator = undefined;
 let deskSize = 0;
 
 // # Instancia os objetos
-const coins=new Coins();
+const coins=new Coins(getElement('pontos'));
 const customer = new Customer(products, faces, skins);
 const grill = new Grill(getElement('grelha'), 3);
 const plates = new Plate(getElement('plates'));
@@ -31,10 +31,6 @@ const lettuce = new Lettuce();
 const cheese = new Cheese();
 // # Geração de Clientes
 customer.createCustomer();
-
-// # Inicia o placar
-let pontos = 0;
-getElement('pontuacao').innerText = `Pontos: ${pontos}`;
 
 // # Adiciona carne à grelha
 meat.addGrillMeat(grill);
