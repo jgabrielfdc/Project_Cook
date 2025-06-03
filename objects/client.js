@@ -1,4 +1,5 @@
 class Customer {
+	finished=0;
 	constructor(products, faces, skins) {
 		this.products = products;
 		this.faces = faces;
@@ -81,7 +82,7 @@ Customer.prototype.createCustomer = function () {
 		customer.appendChild(this.createOrderList());
 		customer.appendChild(this.createFace());
 
-		let clientList = document.getElementById('clientes');
+		let clientList = getElement('clientes');
 		clientList.appendChild(customer);
 
 		// Limpa o intervalo anterior (se existir)
@@ -92,12 +93,14 @@ Customer.prototype.createCustomer = function () {
 	}
 
 	// Atualiza a quantidade de pessoas no balcão
-	deskSize = document.getElementById('clientes').children.length;
+	deskSize = getElement('clientes').children.length;
 }
 
 Customer.prototype.verifyOrders = function (customer) {
 	let orderAmount = customer.children[0].children.length;
 	if (orderAmount < 1) {
-		customer.remove()
+		finished+=1;
+		getElement('atendido').innerText=this.finished;
+		customer.remove();
 	}
 }

@@ -1,6 +1,7 @@
 class Plate {
 	constructor(plateGroup) {
 		this.plateGroup = toArray(plateGroup.children);
+		console.log(coins)
 	}
 
 	getFreePlate() {
@@ -40,7 +41,6 @@ class Plate {
 		plates.onclick = (event) => {
 			const target = event.target;
 			const validClasses = ['plate__item', 'pao_base'];
-
 			if (!validClasses.includes(target.className)) {
 				const orders = toArray(customers.getElementsByTagName('img'));
 				const product = orders.find(item => item.id === target.id);
@@ -49,6 +49,7 @@ class Plate {
 					const customer = product.closest('.cliente') || product.parentNode.parentNode;
 					product.remove();
 					target.remove();
+					coins.updateCoins(product.id);
 					customerObject.verifyOrders(customer);
 				}
 			}

@@ -18,6 +18,7 @@ let customerGenerator = undefined;
 let deskSize = 0;
 
 // # Instancia os objetos
+const coins=new Coins();
 const customer = new Customer(products, faces, skins);
 const grill = new Grill(getElement('grelha'), 3);
 const plates = new Plate(getElement('plates'));
@@ -28,7 +29,6 @@ const soda = new Soda(customer);
 const meat = new Meat(getElement('meat'), 5);
 const lettuce = new Lettuce();
 const cheese = new Cheese();
-
 // # Geração de Clientes
 customer.createCustomer();
 
