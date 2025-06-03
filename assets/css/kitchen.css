@@ -19,9 +19,9 @@
 
 /* Parte superior da mesa */
 .kitchen__table .table__top {
-	padding: 0 15px 0 0;
+	padding: 15px 15px 18px 10px;
 	background-color: #AAA;
-	height: 200px;
+	height:10em;
 	width:437px;
 	display: flex;
 	flex-direction: column;
@@ -43,7 +43,7 @@
 }
 
 .plate__container .plate__content {
-	transform: translate(-10%, 10%);
+	transform: translate(-15%, 10%);
 	background-color: #556642;
 	width: 100%;
 	display: flex;
@@ -75,6 +75,7 @@
 
 .grill__container .grill__content {
 	width: 100%;
+	transform:translate(0%, 10%);
 	display: flex;
 	justify-content: space-between;
 	padding: 5px;
