@@ -1,5 +1,5 @@
 const pages = ['capa', 'tutorial_carne', 'receita_burguer', 'receita_hamburguer', 'receita_cheeseburguer'];
-document.addEventListener('DOMContentLoaded', () => {
+
 let numPg = 0;
 function openModal(element) {
     element.style.display = 'flex'; // Use flex to center
@@ -65,7 +65,7 @@ window.onload = () => {
 
     closeModal(getElement('recipesModal'));
     closeModal(getElement('menuModal'));
-});
+}
 
 /* game-performance-monitor.js (cole no console ou inclua no seu HTML)
 
