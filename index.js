@@ -1,0 +1,1 @@
+import Coins from "./objects/content/UI/coins";

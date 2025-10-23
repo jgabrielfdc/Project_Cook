@@ -1,3 +1,4 @@
+
 class Coins{
     constructor(pontos){  
         this.dinheiro=0;
@@ -13,3 +14,5 @@ class Coins{
         
      }
 }
+
+export default Coins
