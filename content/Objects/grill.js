@@ -50,3 +50,5 @@ Grill.prototype.updateGrillVisual = function () {
 
 	}
 };
+
+export default Grill

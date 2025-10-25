@@ -9,7 +9,7 @@ class Plate {
 
 	getStep() {
 		return this.plateGroup.find(plate => {
-			if (plate.children.length !== 1) return false;
+			if (plate.children.length !== 1 || plate.children[0].id =="bread_base" ) return false;
 			const id = plate.children[0].id;
 			return !['burguer', 'hamburguer', 'cheeseburguer'].includes(id);
 		})?.children[0] || null;
@@ -36,7 +36,7 @@ class Plate {
 		}
 	}
 
-	serveFood(plates, customers, customerObject) {
+	serveFood(plates, customers, customerObject,coins) {
 		plates.onclick = (event) => {
 			const target = event.target;
 			const validClasses = ['plate__item', 'pao_base'];
@@ -55,3 +55,5 @@ class Plate {
 		};
 	}
 }
+
+export default Plate

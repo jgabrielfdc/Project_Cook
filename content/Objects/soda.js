@@ -1,11 +1,13 @@
+
 class Soda {
 	constructor(customers) {
 		this.customers = customers;
 	}
 
-	serveSoda(event) {
+	serveSoda(sabor,coins) {
+		let refrigerante=`refrigerante_${sabor}`;
 		const orders = Array.from(getElement('clientes').getElementsByTagName('img'));
-		const order = orders.find(img => img.id === event.target.id);
+		const order = orders.find(img => img.id === refrigerante);
 
 		if (order) {
 			const customer = order.closest('.cliente'); // Usa o método mais semântico e seguro
@@ -15,3 +17,5 @@ class Soda {
 		}
 	}
 }
+
+export default Soda

@@ -1,6 +1,5 @@
-
 class Coins{
-    constructor(pontos){  
+    constructor(pontos=0){  
         this.dinheiro=0;
         this.values={'burguer':15,'hamburguer':20,'cheeseburguer':25,'refrigerante_cola':5,'refrigerante_lima':5,'refrigerante_uva':5}
         this.pontos=pontos;
@@ -9,7 +8,7 @@ class Coins{
 
      updateCoins(item){
         this.dinheiro+=this.values[item];
-        console.log(this.pontos)
+        console.log(this.pontos);
         this.pontos.innerText=this.dinheiro.toString();
         
      }

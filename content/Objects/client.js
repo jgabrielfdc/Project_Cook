@@ -1,3 +1,9 @@
+let randomSkin;
+let randomFace;
+let randomTimer;
+let customerGenerator = undefined;
+let deskSize = 0;
+
 class Customer {
 	constructor(products, faces, skins) {
 		this.products = products;
@@ -15,7 +21,7 @@ Customer.prototype.generateOrder = function () {
 
 	for (let i = 0; i < orderAmount; i++) {
 		let randomProduct = Math.floor(Math.random() * this.products.length);
-		order = this.products[randomProduct];
+		let order = this.products[randomProduct];
 		this.orders.push(order);
 	}
 
@@ -28,8 +34,8 @@ Customer.prototype.generateCustomerAttributes = function () {
 	randomFace = Math.floor((Math.random() * this.faces.length));
 
 	return {
-		'skin': skins[randomSkin],
-		'face': faces[randomFace]
+		'skin': this.skins[randomSkin],
+		'face': this.faces[randomFace]
 	};
 }
 
@@ -104,3 +110,5 @@ Customer.prototype.verifyOrders = function (customer) {
 		customer.remove();
 	}
 }
+
+export default Customer

@@ -7,3 +7,5 @@ class Cheese{
 		}
 	}
 }
+
+export default Cheese

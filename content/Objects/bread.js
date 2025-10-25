@@ -40,32 +40,32 @@ class Bread {
 
 		this.source.onmouseup = () => {
 			try {
-				let prato = pratos();
-				if (!prato) {
-					throw new Error('Precisa de um Hamburguer');
-				}
-				if (prato.id == 'burguer_step') {
-					prato.id = 'burguer';
-					prato.src = 'assets/img/burguer.png';
-					prato.alt = 'Burguer';
+					let prato = pratos();
+					if (!prato) {
+						throw new Error('Precisa de um Hamburguer');
+					}
+					if (prato.id == 'burguer_step') {
+						prato.id = 'burguer';
+						prato.src = 'assets/img/burguer.png';
+						prato.alt = 'Burguer';
 
-				}
+					}
 
-				if (prato.id == 'hamburguer_step') {
-					prato.id = 'hamburguer';
-					prato.src = 'assets/img/hamburguer.png';
-					prato.alt = 'Hamburguer';
+					if (prato.id == 'hamburguer_step') {
+						prato.id = 'hamburguer';
+						prato.src = 'assets/img/hamburguer.png';
+						prato.alt = 'Hamburguer';
 
-				}
+					}
 
-				if (prato.id == 'cheeseburguer_step') {
-					prato.id = 'cheeseburguer';
-					prato.src = 'assets/img/cheeseburguer.png';
-					prato.alt = 'Chesseburguer';
+					if (prato.id == 'cheeseburguer_step') {
+						prato.id = 'cheeseburguer';
+						prato.src = 'assets/img/cheeseburguer.png';
+						prato.alt = 'Chesseburguer';
+					}
+					
 
-				} else {
-					throw new Error('Precisa de Carne');
-				}
+				console.log(prato.id)
 
 			} catch (erro) {
 				console.error('Erro ao adicionar topo do pão:', erro.message);
@@ -73,3 +73,5 @@ class Bread {
 		}
 	}
 }
+
+export default Bread

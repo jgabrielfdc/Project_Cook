@@ -7,3 +7,5 @@ class Lettuce {
 		}
 	}
 }
+
+export default Lettuce
