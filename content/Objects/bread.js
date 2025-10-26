@@ -1,5 +1,5 @@
 import plate from "./Plate.js";
-
+import trash from "./Trash.js";
 class Bread {
 	constructor() {
 		this.breadTop = getElement('bread_top');
@@ -59,6 +59,11 @@ class Bread {
 						prato.id = 'cheeseburguer';
 						prato.src = 'assets/img/cheeseburguer.png';
 						prato.alt = 'Chesseburguer';
+					}
+
+					prato.oncontextmenu=(event)=>{
+						event.preventDefault();
+						trash.trashMenu(event);
 					}
 
 			} catch (erro) {

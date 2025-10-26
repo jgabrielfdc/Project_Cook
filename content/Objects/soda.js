@@ -1,4 +1,4 @@
-import customer from "./Customers.js";
+import customer from "./Customer.js";
 import coins from "../UI/Coins.js"
 class Soda {
 	constructor() {
