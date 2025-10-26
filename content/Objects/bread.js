@@ -1,6 +1,12 @@
+import plate from "./Plate.js";
+
 class Bread {
-	constructor(source) {
-		this.source = source;
+	constructor() {
+		this.breadTop = getElement('bread_top');
+		this.breadBase = getElement('bread_base');
+
+		this.addBreadBase();
+		this.addBreadTop();
 	}
 
 	createBread() {
@@ -12,15 +18,10 @@ class Bread {
 		return breadItem;
 	}
 
-	addBreadBase(getFreePlate) {
-		if (!this.source || typeof getFreePlate !== 'function') {
-			console.error('Fonte do pão ou função getFreePlate inválida.');
-			return;
-		}
-
-		this.source.onmouseup = () => {
+	addBreadBase() {
+		this.breadBase.onmouseup = () => {
 			try {
-				const freePlate = getFreePlate();
+				const freePlate = plate.getFreePlate();
 				if (freePlate) {
 					freePlate.appendChild(this.createBread());
 				} else {
@@ -32,15 +33,11 @@ class Bread {
 		}
 	}
 
-	addBreadTop(pratos) {
-		if (!this.source || typeof pratos !== 'function') {
-			console.error('Fonte do pão ou função findStep inválida.');
-			return;
-		}
+	addBreadTop() {
 
-		this.source.onmouseup = () => {
+		this.breadTop.onmouseup = () => {
 			try {
-					let prato = pratos();
+					let prato = plate.getStep();
 					if (!prato) {
 						throw new Error('Precisa de um Hamburguer');
 					}
@@ -63,9 +60,6 @@ class Bread {
 						prato.src = 'assets/img/cheeseburguer.png';
 						prato.alt = 'Chesseburguer';
 					}
-					
-
-				console.log(prato.id)
 
 			} catch (erro) {
 				console.error('Erro ao adicionar topo do pão:', erro.message);
@@ -74,4 +68,6 @@ class Bread {
 	}
 }
 
-export default Bread
+const bread=new Bread();
+
+export default bread;

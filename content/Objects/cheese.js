@@ -1,11 +1,19 @@
+import plate from "./Plate.js";
+
 class Cheese{
-	addCheese(plates){
+	constructor(){
+		this.addCheese();
+	}
+	
+	addCheese(){
 		getElement('cheese').onmouseup=function(){
-			let cheeseburguer_step=plates.getPlate('hamburguer_step');
+			let cheeseburguer_step=plate.getPlate('hamburguer_step');
 			cheeseburguer_step.src='assets/img/cheeseburguer_step.png';
 			cheeseburguer_step.id='cheeseburguer_step';
 		}
 	}
 }
 
-export default Cheese
+const cheese=new Cheese();
+
+export default cheese

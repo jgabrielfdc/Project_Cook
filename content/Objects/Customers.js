@@ -5,12 +5,37 @@ let customerGenerator = undefined;
 let deskSize = 0;
 
 class Customer {
-	constructor(products, faces, skins) {
-		this.products = products;
-		this.faces = faces;
-		this.skins = skins;
+	constructor() {
+		this.products = [
+			'burguer',
+			'hamburguer',
+			'cheeseburguer',
+			'refrigerante_cola',
+			'refrigerante_lima',
+			'refrigerante_uva'
+		];
+		this.faces = [
+			'O_O', 
+			'0_0', 
+			'-_-', 
+			'=_=', 
+			'O-O', 
+			'*-*', 
+			'*_*', 
+			'1_1'
+		];
+		this.skins = [
+			'#F7F342', 
+			'#568923', 
+			'#F93A52', 
+			'#68D930', 
+			'#43EC22'
+		];
 		this.orders = [];
 		this.finished=0;
+	
+		//! Cria Clientes Aleatórios
+		this.createCustomer()
 	}
 
 }
@@ -102,13 +127,15 @@ Customer.prototype.createCustomer = function () {
 	deskSize = getElement('clientes').children.length;
 }
 
-Customer.prototype.verifyOrders = function (customer) {
-	let orderAmount = customer.children[0].children.length;
+Customer.prototype.verifyOrders = function (customerObject) {
+	let orderAmount = customerObject.children[0].children.length;
 	if (orderAmount < 1) {
 		this.finished+=1;
 		getElement('atendido').innerText=this.finished;
-		customer.remove();
+		customerObject.remove();
 	}
 }
 
-export default Customer
+let customer=new Customer();
+
+export default customer;

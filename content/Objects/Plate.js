@@ -1,6 +1,9 @@
+import customer from "./Customers.js";
+import coins from "../UI/Coins.js";
 class Plate {
-	constructor(plateGroup) {
-		this.plateGroup = toArray(plateGroup.children);
+	constructor() {
+		this.plateGroup = toArray(getElement('plates').children);
+		this.serveFood();
 	}
 
 	getFreePlate() {
@@ -36,24 +39,25 @@ class Plate {
 		}
 	}
 
-	serveFood(plates, customers, customerObject,coins) {
-		plates.onclick = (event) => {
+	serveFood() {
+		getElement('plates').onclick = (event) => {
 			const target = event.target;
 			const validClasses = ['plate__item', 'pao_base'];
 			if (!validClasses.includes(target.className)) {
-				const orders = toArray(customers.getElementsByTagName('img'));
+				const orders = toArray(getElement('clientes').getElementsByTagName('img'));
 				const product = orders.find(item => item.id === target.id);
 
 				if (product) {
-					const customer = product.closest('.cliente') || product.parentNode.parentNode;
+					const customerObject = product.closest('.cliente') || product.parentNode.parentNode;
 					product.remove();
 					target.remove();
 					coins.updateCoins(product.id);
-					customerObject.verifyOrders(customer);
+					customer.verifyOrders(customerObject);
 				}
 			}
 		};
 	}
 }
 
-export default Plate
+const plate=new Plate();
+export default plate;

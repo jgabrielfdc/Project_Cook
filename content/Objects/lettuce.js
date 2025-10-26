@@ -1,11 +1,17 @@
+import plate from "./Plate.js";
 class Lettuce {
-	addLettuce(plates) {
+	constructor(){
+		this.addLettuce()
+	}
+	addLettuce() {
 		getElement('lettuce').onmouseup = function () {
-			let hamburguer_step = plates.getPlate('burguer_step');
+			let hamburguer_step = plate.getPlate('burguer_step');
 			hamburguer_step.src = 'assets/img/hamburguer_step.png';
 			hamburguer_step.id = 'hamburguer_step';
 		}
 	}
 }
 
-export default Lettuce
+const lettuce=new Lettuce();
+
+export default lettuce;

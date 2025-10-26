@@ -1,10 +1,12 @@
+import grill from "./Grill.js";
 class Meat {
 	meatID = 'meat';
 	meatTexture = 'assets/img/carne_crua.png';
+	meatSource = getElement('meat');
+	meatCookingTime=5
 
-	constructor(meatSource, meatCookingTime) {
-		this.meatSource = meatSource;
-		this.meatCookingTime = meatCookingTime;
+	constructor() {
+		this.addGrillMeat()
 	}
 
 	createMeat() {
@@ -16,13 +18,9 @@ class Meat {
 		return meatItem;
 	}
 
-	addGrillMeat(grill) {
-		if (!this.meatSource || !grill || !grill.grillElement) {
-			console.error('Meat source ou grill inválido.');
-			return;
-		}
+	addGrillMeat() {
 
-		this.meatSource.addEventListener('mouseup', () => {
+		this.meatSource.onmouseup= () => {
 			const currentSlots = grill.grillElement.children.length;
 			if (currentSlots < grill.grillSlots) {
 				const meatItem = this.createMeat();
@@ -31,8 +29,8 @@ class Meat {
 			} else {
 				console.warn('Grelha cheia. Não é possível adicionar mais carne.');
 			}
-		});
+		};
 	}
 }
-
-export default Meat
+const meat=new Meat();
+export default meat;
