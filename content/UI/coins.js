@@ -7,6 +7,9 @@ class Coins{
      
 
      updateCoins(item){
+        let audio=document.getElementById('musica_ambiente');
+        audio.src="../../public/assets/media/moeda.mp3";
+        audio.play()
         this.dinheiro+=this.values[item];
         this.pontos.innerText=this.dinheiro.toString();
         
