@@ -6,7 +6,7 @@ class Lettuce {
 	addLettuce() {
 		getElement('lettuce').onmouseup = function () {
 			let hamburguer_step = plate.getPlate('burguer_step');
-			hamburguer_step.src = './assets/img/hamburguer_step.png';
+			hamburguer_step.src = getImage("hamburguer_step");
 			hamburguer_step.id = 'hamburguer_step';
 		}
 	}

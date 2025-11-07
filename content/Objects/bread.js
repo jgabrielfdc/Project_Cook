@@ -12,7 +12,7 @@ class Bread {
 	createBread() {
 		const breadItem = document.createElement('img');
 		breadItem.id = 'bread_base';
-		breadItem.src = './assets/img/pao_base.png';
+		breadItem.src = getImage("pao_base");
 		breadItem.alt = 'Base de Pão';
 		breadItem.classList.add('bread-item');
 		return breadItem;
@@ -43,21 +43,21 @@ class Bread {
 					}
 					if (prato.id == 'burguer_step') {
 						prato.id = 'burguer';
-						prato.src = './assets/img/burguer.png';
+						prato.src = getImage("burguer");
 						prato.alt = 'Burguer';
 
 					}
 
 					if (prato.id == 'hamburguer_step') {
 						prato.id = 'hamburguer';
-						prato.src = './assets/img/hamburguer.png';
+						prato.src = getImage('hamburguer');
 						prato.alt = 'Hamburguer';
 
 					}
 
 					if (prato.id == 'cheeseburguer_step') {
 						prato.id = 'cheeseburguer';
-						prato.src = './assets/img/cheeseburguer.png';
+						prato.src = getImage('cheeseburguer');
 						prato.alt = 'Chesseburguer';
 					}
 
