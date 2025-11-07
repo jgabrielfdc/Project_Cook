@@ -15,7 +15,7 @@ import coins from "./content/UI/Coins.js";
 
 let audio=document.getElementById('musica_ambiente');
 
-let trilha_sonora=new Audio("public/assets/media/balcao.mp3");
+let trilha_sonora=new Audio("./assets/media/balcao.mp3");
 
 trilha_sonora.play();
 
