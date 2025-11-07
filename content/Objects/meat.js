@@ -1,7 +1,7 @@
 import grill from "./grill.js";
 class Meat {
 	meatID = 'meat';
-	meatTexture = 'public/assets/img/carne_crua.png';
+	meatTexture = './assets/img/carne_crua.png';
 	meatSource = getElement('meat');
 	meatCookingTime=5
 

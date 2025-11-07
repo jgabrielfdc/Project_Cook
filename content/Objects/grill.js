@@ -19,7 +19,7 @@ class Grill {
 							item.remove();
 	
 							breadPlate.id = 'burguer_step';
-							breadPlate.src = 'public/assets/img/burguer_step.png';
+							breadPlate.src = './assets/img/burguer_step.png';
 	
 							this.updateGrillVisual();
 						}
@@ -35,7 +35,7 @@ class Grill {
 	
 		setTimeout(() => {
 			meatItem.id = 'cooked_meat';
-			meatItem.src = 'public/assets/img/carne_assada.png';
+			meatItem.src = './assets/img/carne_assada.png';
 			this.updateGrillVisual();
 		}, 5000);
 	}
@@ -44,11 +44,11 @@ class Grill {
 		const topoGrelha = document.getElementById('topo__grelha');
 		if (this.grillElement.children.length === 0) {
 	
-			topoGrelha.style.backgroundImage = 'url("public/assets/img/grelha_off.png")';
+			topoGrelha.style.backgroundImage = 'url("./assets/img/grelha_off.png")';
 	
 		} else {
 	
-			topoGrelha.style.backgroundImage = 'url("public/assets/img/grelha_on.png")';
+			topoGrelha.style.backgroundImage = 'url("./assets/img/grelha_on.png")';
 	
 		}
 	}

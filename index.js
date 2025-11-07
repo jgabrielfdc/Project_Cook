@@ -18,5 +18,3 @@ let audio=document.getElementById('musica_ambiente');
 let trilha_sonora=new Audio("./assets/media/balcao.mp3");
 
 trilha_sonora.play();
-
-console.log("Olá")
