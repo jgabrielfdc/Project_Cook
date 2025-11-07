@@ -12,9 +12,9 @@ this.randomNumber = function (range) {
 }
 
 this.getImage=function(image){
-	return `./asset/img/${image}.png`;
+	return `./assets/img/${image}.png`;
 }
 
 this.getSound=function(sound){
-	return `./asset/media/${sound}.mp3`;
+	return `./assets/media/${sound}.mp3`;
 }
