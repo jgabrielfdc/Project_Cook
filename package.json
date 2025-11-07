@@ -1,7 +1,7 @@
 {
   "name": "project_cook",
   "version": "1.0.0",
-  "main": "principal.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
