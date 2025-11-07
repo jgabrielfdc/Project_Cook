@@ -1,17 +1,17 @@
 //* # Objetos
-import soda from "./content/Objects/Soda.js";
-import bread from "./content/Objects/Bread.js";
-import cheese from "./content/Objects/Cheese.js";
+import soda from "./content/Objects/soda.js";
+import bread from "./content/Objects/bread.js";
+import cheese from "./content/Objects/cheese.js";
 import customer from "./content/Objects/Customer.js";
-import grill from "./content/Objects/Grill.js";
-import lettuce from "./content/Objects/Lettuce.js";
-import meat from "./content/Objects/Meat.js";
+import grill from "./content/Objects/grill.js";
+import lettuce from "./content/Objects/lettuce.js";
+import meat from "./content/Objects/meat.js";
 import plate from "./content/Objects/Plate.js";
 import trash from "./content/Objects/Trash.js";
 
 //* # Componentes GUI
 import recipe_book from "./content/UI/RecipeBook.js";
-import coins from "./content/UI/Coins.js";
+import coins from "./content/UI/coins.js";
 
 let audio=document.getElementById('musica_ambiente');
 

@@ -1,4 +1,4 @@
-import grill from "./Grill.js";
+import grill from "./grill.js";
 class Meat {
 	meatID = 'meat';
 	meatTexture = 'public/assets/img/carne_crua.png';

@@ -1,5 +1,5 @@
 import customer from "./Customer.js";
-import coins from "../UI/Coins.js";
+import coins from "../UI/coins.js";
 class Plate {
 	constructor() {
 		this.plateGroup = toArray(getElement('plates').children);
